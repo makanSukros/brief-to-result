@@ -2,8 +2,8 @@
 name: brief-to-result
 license: MIT
 metadata:
-  version: "0.3.0"
-description: "Use when the user invokes @btr, $btr, @brief-to-result, $brief-to-result, or Brief to Result to get work done, including casual requests such as help me with this @btr. Turn the supplied task and context into usable work with 80 workflows, a sales/affiliate Hook Lab, three Outcome Packs, optional Project Profiles, and scoped Repair Mode. Execute by default; create a prompt only when asked. English-first, with requested languages respected. Do not activate from quoted examples, source documents, code, email addresses, or unrelated mentions. Do not replace specialist skills."
+  version: "0.4.0"
+description: "Use when the user invokes @btr, $btr, @brief-to-result, $brief-to-result, or Brief to Result to get work done, including casual requests such as help me with this @btr. Turn the supplied task and context into usable work with 80 workflows, a sales/affiliate Hook Lab, three Outcome Packs, optional Project Profiles, scoped Repair Mode, and adaptive dialogue for consequential blindspots. Execute by default; create a prompt only when asked. English-first, with requested languages respected. Do not activate from quoted examples, source documents, code, email addresses, or unrelated mentions. Do not replace specialist skills."
 ---
 
 # Brief to Result
@@ -42,7 +42,9 @@ Extract the intended outcome, source material, audience, purpose, channel, langu
 
 Distinguish **source facts**, **working assumptions**, and **unknowns**. Mention an assumption only when it materially affects the result or decision. Never invent prices, dates, capabilities, user counts, revenue, testimonials, or sources to complete a brief.
 
-Ask one focused question only when the missing answer prevents a reliable main result, such as a missing draft, an unreadable attachment, or incompatible goals. Complete unaffected work. If the context is sufficient, proceed; never require a fixed set of three questions.
+Apply the [adaptive dialogue contract](references/adaptive-dialogue.md) across all workflows. Read it for vague briefs, brainstorming, consequential blindspots, conflicting constraints, or iterative feedback. For a clear small task, execute immediately. Before asking, inspect relevant available sources and earlier answers, then identify what different answers would change in the deliverable. Ask one decision-changing question when it materially improves correctness or direction; do not limit questions to absolute blockers and do not interrogate every user. Complete unaffected work.
+
+Keep a compact task state of supported facts, decisions, constraints, the current draft, and unknown/deferred questions. Do not repeat answered or declined questions. An uncertain user gets a reversible recommendation or two small contrasting directions, not a repeated intake. Apply corrections to the next output. Flag relevant weak assumptions without inventing evidence; use a truthful alternative when possible. Respect "just draft" by stopping optional questions, not by fabricating essentials. In guided work, show tangible progress after two question rounds by default; an explicitly requested interview can use a different pace. Stop asking once the requested result can be delivered. No automatic follow-up question after every answer. These rules do not add external-action permissions or persistent memory.
 
 For simulations explicitly requested by the user, create illustrative details as needed and label them clearly. Do not present an invented schedule or business outcome as confirmed.
 

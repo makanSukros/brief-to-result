@@ -4,448 +4,364 @@
 
 [English](README.md) | [Bahasa Indonesia](README.id.md) · [Lisensi MIT](LICENSE)
 
-**Ubah permintaan sehari-hari menjadi hasil yang bisa dipakai:** hook affiliate untuk dikembangkan, balasan pelanggan yang siap diperiksa, draf konten, catatan rapat yang rapi, latihan belajar, atau brief fitur yang bisa diteruskan ke tim.
+**Ubah permintaan sehari-hari menjadi hasil yang bisa dipakai:** hook affiliate yang spesifik, copy jualan, balasan pelanggan, draf konten, tindak lanjut rapat, latihan belajar, atau brief fitur untuk tim.
 
-BTR adalah skill reusable untuk agent AI yang kompatibel, bukan chatbot terpisah atau model AI baru. Isinya **80 workflow, Hook Lab dengan 24 formula kreatif, tiga Outcome Packs, Project Profiles opsional, dan Repair Mode**. Kamu cukup menjelaskan hasil yang dibutuhkan, tanpa menghafal nama fitur atau nomor workflow.
+BTR adalah skill reusable untuk agent AI yang kompatibel, bukan chatbot terpisah atau model baru. Di dalamnya ada **80 workflow, Hook Lab dengan 24 formula kreatif, tiga Outcome Packs, Project Profiles opsional, Repair Mode, dan dialog adaptif**. Ceritakan kebutuhanmu dengan bahasa biasa. Tidak perlu menghafal nama fitur atau nomor workflow.
 
-[Cari contoh sesuai kebutuhanmu](#use-cases) · [Cara pakai](#quick-start) · [Fitur](#features) · [Instalasi](#instalasi) · [Alat bantu lokal](#local-tools)
+[Cara pakai](#quick-start) · [Percakapan interaktif](#dialogue) · [Contoh per kategori](#use-cases) · [Fitur](#features) · [Instalasi](#installation) · [Pengujian](#tests)
 
-## Tujuan dan manfaatnya
+## Tujuan dan manfaat
 
-Tujuannya adalah mempersingkat proses dari **“tolong bantu saya”** menjadi hasil yang bisa digunakan. BTR dirancang untuk membantu agent memahami permintaan singkat, mengikuti bahasa dan formatmu, menjaga konsistensi beberapa draf, serta merevisi hanya bagian yang kamu minta.
+Tujuannya mengurangi usaha dari **“bantu saya mengerjakan ini”** sampai mendapat hasil yang berguna. BTR memandu agent memakai konteks yang relevan, menanyakan keputusan penting, menjaga fakta dan batasan, lalu mengerjakan permintaan. Bukan mengembalikannya sebagai prompt yang lebih panjang.
 
-BTR bekerja dari konteks dan bahan yang kamu berikan. Kalau informasi penting belum ada, agent diarahkan bertanya seperlunya, bukan mengarang harga, tenggat, fitur produk, atau pengalaman memakai barang. Ini adalah cara kerja untuk membantu, bukan jaminan jawaban sempurna, konten viral, penjualan naik, atau penghematan waktu yang sudah diukur.
-
-> **Langsung ke hasil.** Minta perbaikan pesan, hasilnya pesan yang sudah diperbaiki—bukan prompt yang lebih panjang. Template prompt dibuat ketika diminta. Menyiapkan draf tidak otomatis berarti boleh mengirim atau memublikasikannya.
+Kamu bisa memakai ulang profil proyek yang dipilih, menyiapkan beberapa draf dengan fakta yang konsisten, dan merevisi bagian tertentu tanpa merombak semuanya. Skill tidak menambahkan browsing, akses file, pembuatan gambar, memori permanen, atau izin publikasi. Kemampuan itu mengikuti aplikasi yang menjalankannya. Tetap periksa fakta dan komitmen penting; ini bukan jaminan jawaban sempurna, viral, atau peningkatan penjualan.
 
 <a id="quick-start"></a>
 ## Cukup panggil @btr
 
-Setelah skill dipasang dan dipilih pada aplikasi yang mendukungnya, ngobrol seperti biasa:
+Setelah skill dipasang dan dipilih pada aplikasi yang mendukungnya:
 
 ```text
-@btr buatin 12 hook affiliate buat produk ini. Sudutnya harus beda-beda.
+@btr buatin 12 hook affiliate buat produk ini. Anglenya harus beda-beda.
 ```
 
 ```text
-tolong bantu balas pelanggan ini, tenang tapi jelas @btr
+bantu balas pelanggan ini dengan tenang dan jelas dong @btr
 ```
 
 ```text
-@btr pembukanya aja yang diperbaiki. Bagian lain jangan diubah.
+@btr perbaiki pembukanya aja. Bagian lainnya jangan diubah.
 ```
 
-Tempelkan atau lampirkan detail produk, pesan, catatan, atau file yang relevan. BTR memakai konteks yang sudah tersedia; kamu tidak perlu mengulang brief di setiap revisi. Kalau belum ada tugas atau konteks, cukup satu pertanyaan singkat. Ketik `@btr menu` hanya saat ingin melihat pilihan.
+Tempelkan atau lampirkan bahan yang relevan. BTR seharusnya memakai konteks yang sudah ada, bukan memintamu menjelaskannya ulang. Kalau tugasnya belum diketahui, cukup bertanya singkat. Gunakan `@btr menu` hanya ketika ingin melihat pilihan.
 
-**Mention bukan instalasi otomatis.** Pemilihan skill mengikuti aplikasi yang dipakai. Gunakan pemilih skill yang sudah terpasang jika diperlukan; client dengan pemanggilan berawalan dolar menggunakan `$btr`. Lihat [panduan pemanggilan](brief-to-result/references/invocation.md). Skill tidak menambahkan akses browsing, pembuatan gambar, file, atau izin publikasi jika agent memang tidak memilikinya.
+**Mention bukan instalasi otomatis.** Pemilihan skill mengikuti aplikasi. Client dengan awalan dolar memakai `$btr`; instalasi nama panjang memakai `$brief-to-result`. Lihat [panduan pemanggilan](brief-to-result/references/invocation.md). Menyiapkan draf tidak otomatis memberi izin mengirim atau memublikasikannya.
+
+<a id="dialogue"></a>
+## Interaktif saat perlu, langsung mengerjakan saat sudah jelas
+
+Percakapan bukan kuesioner wajib. BTR memeriksa apakah jawaban yang belum ada benar-benar akan mengubah hasil sebelum bertanya.
+
+| Situasi | Perilaku yang diarahkan |
+| --- | --- |
+| Tugas dan bahannya sudah jelas. | Langsung kerjakan. |
+| Jawabannya ada di lampiran atau percakapan sebelumnya. | Baca atau gunakan dulu, jangan tanya ulang. |
+| Ada keputusan yang mengubah pendekatan. | Tanyakan satu hal paling menentukan, jelaskan alasannya bila membantu. |
+| Permintaan bergantung pada klaim yang belum didukung. | Tunjukkan masalahnya dan gunakan alternatif yang jujur jika memungkinkan. |
+| Kamu menjawab “belum tahu”. | Beri rekomendasi sementara atau dua arah konkret untuk dibandingkan. |
+| Kamu mengoreksi jawaban sebelumnya. | Pakai koreksinya tanpa mengulang seluruh proses awal. |
+| Kamu bilang “langsung buat, jangan tanya lagi”. | Hentikan pertanyaan opsional, bukan mengarang informasi penting. |
+| Informasinya sudah cukup. | Berhenti mewawancarai dan berikan hasil. |
+
+**Contoh: menyesuaikan konsep video produk.** Ini ilustrasi, bukan benchmark model independen.
+
+> **Kamu:** Bantu konsep video penjepit kabel sesuai bahan visual yang bisa saya pakai. Saya belum jelaskan asetnya.
+>
+> **BTR:** Kamu punya rekaman produk dipakai, atau hanya foto produk? Ini menentukan apakah pembukanya bisa langsung menunjukkan demo.
+>
+> **Kamu:** Baru foto.
+>
+> **BTR:** Pakai pembuka berbasis foto, bukan pengujian palsu. Teks layar: “Ujung kabelnya di mana lagi?” Lanjutkan dengan foto produk dan fungsi penahan kabel yang sebenarnya.
+
+Kalau kamu hanya meminta hook teks dan fungsi produknya sudah jelas, BTR seharusnya **tidak menanyakan rekaman demo**. Contoh pertanyaan yang berguna bukan berarti menjadi kolom wajib setiap tugas.
+
+Cukup katakan `@btr bantu saya mikirin ini`, `@btr bongkar asumsi yang saya lewatkan`, atau `@btr langsung buat dari fakta yang ada`. Ini permintaan biasa, bukan perintah baru yang harus dihafal. Dalam diskusi terpandu, setelah dua putaran pertanyaan sebaiknya sudah ada draf, rangkuman, atau opsi konkret sebelum menggali lagi, kecuali kamu memang meminta wawancara lebih panjang. Sumber yang belum tersedia tetap bisa menghambat jawaban yang jujur. Lihat [aturan dialog adaptif](brief-to-result/references/adaptive-dialogue.md) dan [bukti serta batas pengujian](evals/README.md).
 
 <a id="use-cases"></a>
 ## Pilih contoh sesuai pekerjaanmu
 
-Cari kategori yang paling dekat, salin contoh perintahnya, lalu sertakan bahan yang disebutkan. **Kategori ini bukan mode yang harus diatur terlebih dahulu.** Contoh lanjutan memakai bahan dari percakapan sebelumnya.
+Pilih kategori, salin perintahnya, lalu sertakan bahan yang disebutkan. Contoh lanjutan memakai konteks sebelumnya. Kategori ini bukan mode yang perlu diatur.
 
-| Kamu sedang bekerja sebagai… | Langsung ke contoh | Hasil yang bisa diminta |
+| Kamu bekerja sebagai… | Langsung ke contoh | Hasil yang bisa diminta |
 | --- | --- | --- |
-| Affiliator | [Affiliator](#affiliates) | Hook berbeda angle, naskah demo, revisi pembuka |
-| Seller atau pemilik UMKM | [Seller dan UMKM](#sellers) | Deskripsi produk, balasan keberatan, pengumuman peluncuran |
-| Kreator atau pengelola media sosial | [Kreator dan Social Media](#creators) | Postingan, carousel, adaptasi konten |
-| Marketer atau copywriter | [Marketing dan Copywriting](#marketing) | Angle iklan, headline landing page, rencana A/B test |
-| Freelancer atau agency | [Freelancer dan Agency](#freelancers) | Proposal, komunikasi klien, batas revisi |
-| Customer service atau admin | [Customer Service dan Admin](#support) | Balasan, FAQ, catatan eskalasi |
-| Pekerja, manajer, atau pemimpin tim | [Pekerja dan Manajer Tim](#teams) | Ringkasan rapat, prioritas, SOP |
-| Pelajar, mahasiswa, atau pengajar | [Belajar dan Mengajar](#learning) | Penjelasan, soal latihan, rencana pembelajaran |
-| Founder, tim produk, atau developer | [Founder, Product, dan Developer](#product) | Validasi ide, spesifikasi fitur, diagnosis bug |
-| Pengguna untuk kebutuhan pribadi | [Kebutuhan Sehari-hari](#everyday) | Pesan yang jelas, rencana praktis, perbandingan pilihan |
+| Affiliator | [Affiliator](#affiliates) | Hook, konsep demo, revisi pembuka |
+| Seller atau pemilik UMKM | [Seller dan UMKM](#sellers) | Copy produk, balasan keberatan, draf peluncuran |
+| Kreator atau pengelola media sosial | [Kreator](#creators) | Postingan, carousel, adaptasi konten |
+| Marketer atau copywriter | [Marketing](#marketing) | Angle, landing page, rencana A/B |
+| Freelancer atau agency | [Freelancer](#freelancers) | Proposal, komunikasi scope, revisi |
+| Customer service atau admin | [CS dan Admin](#support) | Balasan, FAQ, eskalasi |
+| Pekerja atau manajer tim | [Tim](#teams) | Tindak lanjut rapat, prioritas, SOP |
+| Pelajar, mahasiswa, atau pengajar | [Belajar](#learning) | Penjelasan, latihan, rencana pelajaran |
+| Founder, tim produk, atau developer | [Produk](#product) | Validasi, requirement, debugging |
+| Pengguna untuk urusan pribadi | [Sehari-hari](#everyday) | Pesan, rencana, perbandingan |
 
 <a id="affiliates"></a>
 ### Contoh pemakaian untuk Affiliator
 
-**Bisa membantu:** menemukan sudut jualan, membuka video produk, menyusun adegan demo, dan memperbaiki hook tanpa merombak seluruh naskah.
-
-**Bahan yang berguna:** fungsi produk, siapa yang memakainya, spesifikasi yang diketahui, promo yang benar-benar berlaku, serta pengalamanmu sendiri jika ingin membuat review personal. Link atau foto produk membantu jika agent bisa membacanya. Tidak harus lengkap semua untuk mulai.
-
-**1. Cari hook dengan angle yang berbeda**
+**Bisa membantu:** mencari sudut jualan, membuat hook, menyusun konsep video, dan merevisi pembuka. **Bahan yang berguna:** fungsi produk, calon pengguna, visual yang tersedia, penawaran yang berlaku, dan pengalaman asli jika relevan. Tidak harus lengkap semua untuk mulai.
 
 ```text
-@btr buatin 12 hook affiliate buat penjepit kabel meja yang menahan ujung kabel
-di tepi meja. Targetnya orang yang kerja di meja. Bahasa Indonesia,
-natural, sedikit nyindir, dan pakai situasi sehari-hari yang beda-beda.
-Jangan ngarang harga, popularitas, atau pengalaman pakai. Hooknya aja.
+@btr buatin 12 hook affiliate untuk penjepit kabel yang menahan ujung kabel
+di tepi meja. Targetnya orang yang bekerja di meja. Bahasa Indonesia,
+natural, sedikit nyindir, dan situasinya beda-beda, bukan ganti sinonim.
+Jangan ngarang harga, popularitas, atau pengalaman pakai. Hooknya saja.
 ```
-
-**2. Lanjutkan jadi konsep video yang bisa direkam**
 
 ```text
-@btr pilih tiga hook paling menarik dari tadi.
-Masing-masing jadiin naskah video singkat: pembuka, adegan pertama,
-demo produk, dan satu CTA. Target sekitar 20 detik;
-durasinya perkiraan dulu sampai dibaca. Saya bisa dapat komisi affiliate,
-jadi sertakan keterangan yang jelas di naskahnya.
+@btr pilih tiga hook paling menarik dari tadi. Masing-masing jadiin
+pembuka, adegan pertama, demo, dan satu CTA. Target sekitar 20 detik;
+durasinya perkiraan sampai dibaca. Saya bisa dapat komisi affiliate,
+jadi sertakan keterangan yang jelas dalam naskahnya.
 ```
-
-**3. Perbaiki pembuka yang masih terasa generik**
 
 ```text
-@btr hook ini masih berasa iklan template. Ubah hooknya aja
-pakai kejadian sehari-hari yang lebih spesifik dan ngena.
-Fakta produk, isi naskah, dan CTA tetap. Jangan bikin testimoni palsu.
+@btr pembukanya masih generik. Ubah hooknya saja dengan kejadian
+sehari-hari yang lebih spesifik. Fakta produk, isi naskah, dan CTA tetap.
+Jangan bikin testimoni palsu.
 ```
 
-**Hasil yang didapat:** alasan memperhatikan produk yang berbeda-beda, hubungan yang jelas antara hook dan demo, serta revisi sesuai bagian yang diminta.
+**Hasil yang dituju:** alasan memperhatikan produk yang berbeda dan demo yang menjawab hook. Untuk contoh fiktif penjepit kabel, kalimat “Alat kecil ini bikin hidup lebih mudah” bisa menjadi **“Mejanya udah estetik. Nyari kabelnya masih harus merangkak.”** Adegan berikutnya perlu menunjukkan masalah dan fungsi produk yang sebenarnya.
 
-**Ilustrasi, bukan hasil benchmark:** untuk contoh fiktif penjepit kabel di atas, kalimat umum “Alat kecil ini bikin hidup lebih mudah” bisa dikembangkan menjadi **“Mejanya udah estetik. Nyari kabelnya masih harus merangkak.”** Adegan berikutnya perlu memperlihatkan masalah kabel dan fungsi penjepit yang sebenarnya, bukan kejutan yang tidak berhubungan.
-
-[Hook Lab](brief-to-result/references/hook-lab.md) membangun hook dari situasi dan fungsi produk, bukan mengganti nama barang dalam daftar kalimat populer. Ada [24 formula](brief-to-result/references/hook-formulas.md) untuk masalah sehari-hari, kontras, demonstrasi, pertimbangan membeli, pengalaman nyata, dan interaksi. Kalau klaim urgensi atau performa belum didukung fakta, pendekatannya diganti—bukan buktinya dikarang. Lihat [contoh tambahan](brief-to-result/references/hook-examples.md).
+[Hook Lab](brief-to-result/references/hook-lab.md) memakai [24 formula](brief-to-result/references/hook-formulas.md), bukan sekadar mengganti nama barang dalam kalimat populer. [Contoh tambahan](brief-to-result/references/hook-examples.md) adalah ilustrasi, bukan bukti peningkatan conversion.
 
 <a id="sellers"></a>
 ### Contoh pemakaian untuk Seller dan UMKM
 
-**Bisa membantu:** menjelaskan manfaat produk, menjawab keraguan pembeli, dan menyiapkan pengumuman yang konsisten.
-
-**Bahan yang berguna:** deskripsi produk, target pembeli, harga dan syarat yang berlaku, atau pesan pelanggan.
-
-**1. Ubah spesifikasi menjadi deskripsi yang mudah dipahami**
+**Bisa membantu:** menjelaskan manfaat, menjawab keberatan, dan membuat pesan peluncuran yang konsisten. **Bahan:** spesifikasi, harga dan syarat asli, target pembeli, atau pesan pelanggan.
 
 ```text
 @btr tulis ulang deskripsi produk ini untuk pembeli pertama kali.
-Jelaskan setiap fitur penting membantu masalah sehari-hari yang mana.
-Spesifikasi, harga, dan keterbatasannya jangan diubah.
-Berikan satu deskripsi siap pakai, bukan tips menulis.
+Jelaskan setiap fitur membantu masalah apa. Pertahankan spesifikasi,
+harga, dan keterbatasan. Berikan deskripsinya, bukan tips menulis.
 ```
-
-**2. Balas pelanggan yang bilang “mahal”**
 
 ```text
-@btr bantu balas pelanggan yang bilang produk ini mahal.
-Buat singkat dan ramah, pakai manfaat serta ketentuan produk yang saya berikan.
-Jangan mengarang diskon atau memaksa orang membeli.
+@btr buat balasan singkat dan ramah untuk pelanggan yang bilang mahal.
+Gunakan manfaat dan syarat yang saya berikan. Jangan mengarang diskon
+atau menekan pelanggan supaya membeli.
 ```
-
-**3. Siapkan pengumuman peluncuran**
 
 ```text
-@btr dari catatan rilis dan ketentuan penawaran yang sudah pasti ini,
-buat satu email pelanggan, dua postingan sosial, dan lima jawaban FAQ.
-Fakta produknya harus sama di semua draf. Jangan dipublikasikan dulu.
+@btr dari catatan rilis dan penawaran yang sudah pasti ini, buat satu
+email pelanggan, dua postingan sosial, dan lima jawaban FAQ.
+Fakta produk harus konsisten. Siapkan draf, jangan publikasikan.
 ```
 
-**Hasil yang didapat:** copy yang menjawab kebutuhan pembeli dan beberapa draf dengan informasi produk yang konsisten.
+**Hasil yang dituju:** copy yang membantu pembeli memahami produk. Kebijakan yang belum diketahui tidak boleh berubah menjadi janji karangan.
 
 <a id="creators"></a>
 ### Contoh pemakaian untuk Kreator dan Social Media
 
-**Bisa membantu:** mencari angle, mengubah bahan menjadi draf sesuai kanal, dan mempertahankan gaya penulisanmu.
-
-**Bahan yang berguna:** topik, artikel, transkrip, postingan lama, atau contoh tulisanmu.
-
-**1. Ubah artikel menjadi postingan singkat**
+**Bisa membantu:** menemukan angle dan mengadaptasi konten dengan gaya yang konsisten. **Bahan:** artikel, transkrip, catatan, draf, atau contoh tulisanmu.
 
 ```text
-@btr dari artikel ini, buat dua postingan X dalam bahasa Inggris.
-Buka dengan poin paling menarik yang memang didukung artikel.
-Pertahankan gaya ngobrol saya dan catatan penting dari sumbernya.
-Jangan bikin hook yang janjinya tidak dijawab isi postingan.
+@btr jadikan artikel ini dua postingan pendek untuk X dalam bahasa Inggris.
+Buka dengan poin paling menarik yang didukung sumber. Pertahankan gaya
+ngobrol saya dan batasan penting sumber. Isi harus memenuhi janji hook.
 ```
-
-**2. Susun carousel yang alurnya enak diikuti**
 
 ```text
-@btr jadikan catatan ini carousel enam slide untuk pemula.
-Setiap slide cukup satu ide utama, teks layar singkat, dan arahan visual.
-Slide pertama harus spesifik, jangan cuma “Semua yang perlu kamu tahu”.
+@btr jadikan catatan ini carousel enam slide untuk pemula. Tiap slide
+satu ide, teks singkat, dan arahan visual. Pembukanya harus spesifik,
+bukan “Semua yang perlu kamu tahu”.
 ```
-
-**3. Adaptasi satu video menjadi beberapa konten**
 
 ```text
-@btr dari transkrip ini, buat satu postingan LinkedIn, satu caption Instagram,
-dan satu outline video pendek. Faktanya sama, tapi angle dan susunannya
-sesuaikan masing-masing kanal. Berikan draf, bukan jadwal posting.
+@btr dari transkrip ini buat satu post LinkedIn, satu caption Instagram,
+dan satu outline video pendek. Fakta tetap sama, angle dan struktur
+sesuai kanal. Berikan draf, bukan jadwal posting.
 ```
 
-**Hasil yang didapat:** draf berbeda yang sesuai kanal. Arahan visual atau outline bukan gambar maupun video jadi; produksi membutuhkan alat yang tersedia dan permintaan untuk membuatnya.
+**Hasil yang dituju:** draf sesuai kanal. Arahan visual bukan gambar yang sudah dibuat atau video yang sudah dirender.
 
 <a id="marketing"></a>
 ### Contoh pemakaian untuk Marketing dan Copywriting
 
-**Bisa membantu:** mencari alasan membeli yang berbeda, memperjelas pesan produk, dan merancang perbandingan materi iklan.
-
-**Bahan yang berguna:** audiens, penawaran, bukti produk, landing page, dan batasan kampanye.
-
-**1. Cari beberapa sudut iklan untuk satu penawaran**
+**Bisa membantu:** angle iklan, positioning yang jelas, dan hipotesis pengujian. **Bahan:** audiens, penawaran, bukti produk, landing page, serta batas kampanye.
 
 ```text
-@btr buat lima angle iklan untuk penawaran dan audiens ini.
-Masing-masing harus menjawab masalah, keraguan, atau motivasi membeli yang berbeda.
-Beri satu headline dan satu kalimat pembuka per angle.
-Jangan tambahkan klaim paling bagus tanpa bukti.
+@btr buat lima angle iklan untuk penawaran dan audiens ini. Tiap angle
+menjawab masalah, keraguan, atau motivasi membeli yang berbeda.
+Berikan satu headline dan kalimat pembuka. Jangan pakai klaim tanpa bukti.
 ```
-
-**2. Perjelas bagian pertama landing page**
 
 ```text
-@btr perbaiki hero section landing page ini saja.
-Harus langsung jelas produknya untuk siapa, membantu apa, dan langkah berikutnya.
-Pertahankan penawaran serta klaim yang sebenarnya. Pilih satu versi rekomendasi.
+@btr perbaiki bagian hero landing page ini saja. Perjelas untuk siapa,
+apa manfaatnya, dan langkah berikutnya. Penawaran serta klaim asli tetap.
+Berikan satu versi yang kamu rekomendasikan.
 ```
-
-**3. Rancang pengujian dua hook**
 
 ```text
-@btr susun A/B test untuk dua kalimat pembuka ini.
-Jaga audiens, penawaran, isi, dan CTA tetap sebanding.
-Jelaskan dugaan yang diuji, metrik yang diamati, dan batas kesimpulannya.
-Jangan meramal CTR pemenangnya.
+@btr rancang A/B test untuk dua pembuka ini. Audiens, penawaran, isi,
+dan CTA dibuat sebanding. Jelaskan hipotesis, ukuran hasil, dan batas
+kesimpulannya. Jangan meramal CTR pemenang.
 ```
 
-**Hasil yang didapat:** konsep yang benar-benar berbeda dan alasan pengujian yang jelas, bukan skor performa karangan.
+**Hasil yang dituju:** konsep berbeda dengan alasan yang bisa diuji, bukan skor performa buatan.
 
 <a id="freelancers"></a>
 ### Contoh pemakaian untuk Freelancer dan Agency
 
-**Bisa membantu:** merapikan permintaan klien menjadi lingkup kerja dan menyampaikan batas pekerjaan tanpa terkesan menyerang.
-
-**Bahan yang berguna:** brief klien, hasil yang disepakati, tenggat, biaya, serta ketentuan revisi yang memang ada.
-
-**1. Susun draf proposal dari brief**
+**Bisa membantu:** scope yang jelas dan komunikasi klien yang profesional. **Bahan:** brief, hasil yang disepakati, biaya, waktu, serta aturan revisi.
 
 ```text
-@btr jadikan brief klien ini proposal singkat berisi tujuan,
-hasil yang diserahkan, hal di luar lingkup, kebutuhan dari klien, dan pertanyaan terbuka.
-Biaya serta timeline pakai yang memang sudah disepakati. Tandai yang belum pasti.
+@btr jadikan brief klien ini proposal singkat: tujuan, hasil, batas scope,
+dependensi, dan pertanyaan terbuka. Gunakan biaya dan waktu yang sudah
+benar-benar disepakati. Tandai yang masih belum jelas.
 ```
-
-**2. Balas permintaan tambahan di luar lingkup**
 
 ```text
-@btr bantu balas permintaan tambahan ini dengan ramah tapi tegas.
-Jelaskan bagian yang di luar scope terlampir dan apa yang perlu disepakati
-sebelum dikerjakan. Jangan menjanjikan gratis atau mengarang biaya baru.
+@btr bantu balas permintaan tambahan ini dengan ramah tetapi tegas.
+Jelaskan bagian yang di luar scope terlampir dan apa yang perlu disepakati.
+Jangan menjanjikan kerja gratis atau mengarang biaya baru.
 ```
-
-**3. Terapkan revisi tanpa mengubah bagian yang sudah disetujui**
 
 ```text
-@btr terapkan feedback klien ini pada headline dan paragraf penutup saja.
-Isi utama yang sudah disetujui, fakta produk, dan hasil kerja tetap.
-Berikan draf revisi dan ringkasan singkat bagian yang berubah.
+@btr terapkan feedback klien hanya pada headline dan paragraf penutup.
+Isi yang sudah disetujui, fakta produk, dan deliverable jangan berubah.
+Berikan hasil revisi dan ringkasan perubahannya.
 ```
 
-**Hasil yang didapat:** bahan kerja yang lebih jelas, balasan klien siap ditinjau, atau revisi terarah. Menulis proposal tidak otomatis mengirim atau menyetujui perjanjian.
+**Hasil yang dituju:** proposal, balasan, atau revisi dengan batas jelas. Menulis draf tidak berarti mengirim atau menerima perjanjian.
 
 <a id="support"></a>
 ### Contoh pemakaian untuk Customer Service dan Admin
 
-**Bisa membantu:** membalas dengan empati, menjelaskan langkah berikutnya, dan merapikan pertanyaan berulang menjadi panduan.
-
-**Bahan yang berguna:** pesan pelanggan yang sudah disamarkan, kebijakan layanan, fakta masalah yang diketahui, atau catatan support yang disetujui.
-
-**1. Balas keluhan tanpa menjanjikan yang belum pasti**
+**Bisa membantu:** balasan empatik, FAQ, dan catatan eskalasi. **Bahan:** pesan yang sudah disamarkan, kebijakan resmi, fakta insiden, atau catatan dukungan.
 
 ```text
-@btr buat balasan yang tenang untuk keluhan ini berdasarkan kebijakan layanan terlampir.
-Akui masalahnya, jelaskan langkah berikutnya yang memang tersedia,
-dan tanyakan hanya informasi yang diperlukan.
-Jangan mengarang refund atau waktu penyelesaian.
+@btr buat balasan tenang berdasarkan keluhan dan kebijakan layanan ini.
+Akui masalahnya lalu jelaskan langkah berikutnya. Tanyakan hanya informasi
+yang dibutuhkan. Jangan menjanjikan refund atau waktu selesai yang belum pasti.
 ```
-
-**2. Jadikan pertanyaan berulang sebagai FAQ**
 
 ```text
 @btr kelompokkan pertanyaan pelanggan yang sudah disamarkan ini menjadi FAQ.
-Jawab berdasarkan dokumentasi yang saya berikan.
-Tandai pertanyaan yang belum terjawab di dokumentasi, jangan bikin kebijakan baru.
+Jawab berdasarkan dokumentasi kami. Tandai pertanyaan yang belum terjawab,
+jangan mengarang kebijakan.
 ```
-
-**3. Buat catatan eskalasi internal**
 
 ```text
-@btr rangkum percakapan support ini untuk diteruskan ke tim internal:
-masalah yang dilaporkan, bukti yang terlihat, langkah yang sudah dicoba,
-dampak ke pelanggan, dan informasi yang masih dibutuhkan.
-Pisahkan fakta pasti dan dugaan penyebab.
+@btr jadikan percakapan ini catatan eskalasi: masalah, bukti, langkah yang
+sudah dicoba, dampak, dan informasi yang masih dibutuhkan.
+Pisahkan fakta dari dugaan penyebab.
 ```
 
-**Hasil yang didapat:** draf balasan dan catatan internal yang mudah ditindaklanjuti. Hapus data pribadi yang tidak diperlukan sebelum membagikan bahan; tidak ada pesan yang otomatis dikirim.
+**Hasil yang dituju:** draf dan catatan internal yang bisa ditinjau. Hilangkan data pribadi yang tidak diperlukan; tidak ada pengiriman otomatis.
 
 <a id="teams"></a>
 ### Contoh pemakaian untuk Pekerja dan Manajer Tim
 
-**Bisa membantu:** mengubah rapat menjadi tindakan, menentukan prioritas yang realistis, dan membuat proses kerja yang bisa diulang.
-
-**Bahan yang berguna:** catatan rapat, daftar tugas beserta tenggat dan kapasitas, atau penjelasan proses yang sedang berjalan.
-
-**1. Rapikan catatan rapat menjadi tindakan**
+**Bisa membantu:** tindak lanjut rapat, prioritas realistis, dan prosedur berulang. **Bahan:** catatan, tenggat, kapasitas, atau deskripsi proses.
 
 ```text
 @btr jadikan catatan rapat ini keputusan, tugas, penanggung jawab, dan tenggat.
-Kalau penanggung jawab atau tanggalnya belum ada, tulis belum disepakati.
-Pisahkan pertanyaan terbuka. Jangan menambahkan komitmen yang tidak ada di catatan.
+Tandai nama atau tanggal yang belum disepakati. Pisahkan pertanyaan terbuka.
+Jangan menambahkan komitmen yang tidak ada di catatan.
 ```
-
-**2. Pilih pekerjaan yang muat minggu ini**
 
 ```text
-@btr ini daftar tugas dan tenggat saya. Minggu ini waktu tersedia cuma enam jam.
-Pilih tiga prioritas, apa yang ditunda, dan konsekuensi pilihannya.
-Jelaskan mana estimasi waktu yang masih perkiraan. Jangan ubah kalender saya.
+@btr ini tugas dan tenggat saya. Waktu yang tersedia minggu ini enam jam.
+Pilih tiga prioritas, apa yang ditunda, dan konsekuensinya.
+Tandai perkiraan durasi. Jangan mengubah kalender.
 ```
-
-**3. Buat SOP yang bisa diikuti anggota baru**
 
 ```text
-@btr ubah penjelasan proses ini menjadi SOP untuk anggota tim baru.
-Cantumkan kapan dimulai, bahan yang dibutuhkan, langkah kerja, pengecualian,
-alur eskalasi, dan tanda pekerjaan selesai. Tandai keputusan kebijakan yang belum ada.
+@btr jadikan proses ini SOP untuk anggota tim baru: kapan mulai,
+bahan yang diperlukan, langkah, pengecualian, eskalasi, dan kriteria selesai.
+Tandai keputusan kebijakan yang masih belum ada.
 ```
 
-**Hasil yang didapat:** rencana atau prosedur dengan langkah berikutnya yang jelas, tanpa mengarang keputusan untuk tim.
+**Hasil yang dituju:** tindakan jelas tanpa mengarang keputusan atas nama orang lain.
 
 <a id="learning"></a>
 ### Contoh pemakaian untuk Pelajar, Mahasiswa, dan Pengajar
 
-**Bisa membantu:** memahami materi sulit, berlatih menjawab, dan menyiapkan pembelajaran dengan tujuan yang jelas.
-
-**Bahan yang berguna:** catatan, cuplikan bab, tujuan belajar, tingkat pemahaman peserta, atau jawaban yang sudah kamu coba.
-
-**1. Pahami bagian materi yang membingungkan**
+**Bisa membantu:** pemahaman, latihan, dan rencana pembelajaran. **Bahan:** catatan, kutipan bab, tujuan belajar, tingkat peserta, atau jawaban yang sudah dicoba.
 
 ```text
-@btr jelaskan bagian catatan ini untuk pemula.
-Mulai dari ide utamanya, kasih satu contoh konkret, lalu jelaskan
-kesalahpahaman yang paling mungkin terjadi. Detail teknisnya harus tetap benar.
+@btr jelaskan bagian catatan ini untuk pemula. Mulai dari inti,
+beri satu contoh konkret, lalu luruskan salah paham yang mungkin muncul.
+Detail teknis harus tetap akurat.
 ```
-
-**2. Latihan dulu sebelum melihat jawaban**
 
 ```text
-@btr buat lima soal latihan dari catatan ini, dari mudah ke lebih sulit.
-Berikan soalnya dulu dan tunggu jawaban saya sebelum menunjukkan pembahasan.
-Jangan memasukkan materi di luar catatan tanpa menandainya sebagai tambahan.
+@btr buat lima soal dari catatan ini, dari mudah sampai lebih sulit.
+Berikan soal dulu dan tunggu jawaban saya sebelum menjelaskan.
+Tandai materi di luar catatan sebagai tambahan.
 ```
-
-**3. Siapkan pembelajaran yang terarah**
 
 ```text
-@btr gunakan bahan ini untuk membuat rencana pembelajaran 30 menit
-sesuai tingkat peserta yang saya sebutkan. Sertakan satu tujuan belajar,
-penjelasan, aktivitas, dan pemeriksaan pemahaman.
-Durasi itu rencana, bukan waktu yang sudah diuji.
+@btr gunakan bahan ini untuk rencana pelajaran 30 menit sesuai tingkat peserta.
+Masukkan tujuan, penjelasan, aktivitas, dan pemeriksaan pemahaman.
+Durasi adalah rencana, bukan waktu yang sudah diukur.
 ```
 
-**Hasil yang didapat:** penjelasan, latihan, atau rencana mengajar berdasarkan bahan yang tersedia, bukan kutipan atau referensi karangan.
+**Hasil yang dituju:** penjelasan dan bahan belajar, bukan kutipan atau sumber palsu. Kuis interaktif boleh sengaja berhenti untuk menunggu jawabanmu.
 
 <a id="product"></a>
 ### Contoh pemakaian untuk Founder, Product, dan Developer
 
-**Bisa membantu:** menguji ide, memperjelas perilaku fitur sebelum dibangun, dan mencari penyebab bug berdasarkan bukti.
-
-**Bahan yang berguna:** masalah dan target pengguna, catatan fitur, alur saat ini, kode, log, atau langkah reproduksi error.
-
-**1. Uji ide sebelum terlalu banyak membangun**
+**Bisa membantu:** menguji asumsi, memperjelas perilaku fitur, dan diagnosis berbasis bukti. **Bahan:** masalah, audiens, catatan fitur, alur, kode, log, atau langkah reproduksi.
 
 ```text
-@btr bedah ide produk ini. Cari tiga asumsi paling berisiko,
-bukti yang bisa mendukung atau menggugurkan masing-masing,
-dan eksperimen kecil yang sebaiknya dilakukan lebih dulu.
-Jangan menganggap kebutuhan pasarnya sudah terbukti.
+@btr tantang ide produk ini. Cari tiga asumsi paling berisiko,
+bukti yang mendukung atau menolaknya, dan eksperimen kecil untuk mulai.
+Jangan menganggap permintaan pasar sudah terbukti.
 ```
-
-**2. Jadikan ide fitur bahan implementasi**
 
 ```text
-@btr ubah ide fitur ini menjadi brief, alur pengguna, acceptance criteria,
-edge cases, dan tugas implementasi berurutan sesuai dependensinya.
-Tandai keputusan yang masih perlu dibuat. Jangan coding dulu.
+@btr jadikan ide fitur ini brief, alur pengguna, acceptance criteria,
+edge cases, dan tugas implementasi menurut dependensi.
+Tandai keputusan yang belum selesai. Jangan coding dulu.
 ```
-
-**3. Diagnosis bug sebelum memberi patch**
 
 ```text
 @btr periksa error, kode terkait, dan langkah reproduksi ini.
-Pisahkan fakta yang terlihat dari dugaan. Pilih pemeriksaan pertama yang paling berguna,
-lalu jika buktinya cukup, sarankan perbaikan terarah dan cara mengujinya.
+Pisahkan observasi dari hipotesis. Sarankan pemeriksaan terkecil yang berguna,
+lalu perbaikan terarah dan pengujiannya jika buktinya cukup.
 ```
 
-**Hasil yang didapat:** rencana eksperimen, spesifikasi implementasi, atau diagnosis berbasis bukti. Saran perbaikan belum berarti perbaikan sudah diuji; BTR harus membedakannya.
+**Hasil yang dituju:** rencana validasi, spesifikasi, atau diagnosis yang bisa ditindaklanjuti. Usulan perbaikan bukan perbaikan yang sudah diuji.
 
 <a id="everyday"></a>
 ### Contoh pemakaian untuk Kebutuhan Sehari-hari
 
-**Bisa membantu:** menyampaikan maksud dengan jelas, mempertimbangkan pilihan, dan merapikan kebutuhan menjadi rencana yang masuk akal.
-
-**Bahan yang berguna:** pesan yang perlu dijawab, batasanmu, atau pilihan yang sedang dipertimbangkan.
-
-**1. Tolak undangan dengan sopan**
+**Bisa membantu:** pesan yang jelas dan rencana praktis. **Bahan:** pesan, waktu, batasan, atau pilihan yang sedang dibandingkan.
 
 ```text
-@btr bantu saya menolak undangan ini dengan ramah dalam dua kalimat.
-Jangan mengarang alasan atau menawarkan tanggal pengganti yang belum saya setujui.
+@btr bantu menolak undangan ini dengan ramah dan singkat.
+Jangan mengarang alasan atau membuat janji untuk tanggal lain.
 ```
-
-**2. Atur pekerjaan rumah untuk akhir pekan**
 
 ```text
-@btr susun pekerjaan rumah ini sesuai waktu empat jam yang saya punya hari Sabtu.
-Kelompokkan tugas yang berkaitan, sisakan sedikit jeda,
-dan jelaskan apa yang ditunda kalau tidak semuanya muat.
-Jangan menjadwalkan apa pun di aplikasi.
+@btr susun pekerjaan rumah ini menjadi rencana akhir pekan yang realistis.
+Gunakan waktu dan batasan yang saya berikan. Tandai perkiraan dan jangan
+menganggap orang lain sudah setuju membantu.
 ```
-
-**3. Bandingkan pilihan berdasarkan kebutuhanmu**
 
 ```text
-@btr bandingkan tiga pilihan ini dengan budget dan prioritas saya.
-Rekomendasikan satu, jelaskan konsekuensinya, dan informasi apa yang belum ada
-sehingga bisa mengubah pilihan. Pakai fakta yang saya berikan, bukan spesifikasi karangan.
+@btr bandingkan pilihan ini sesuai prioritas saya. Rekomendasikan satu,
+jelaskan konsekuensinya, dan informasi apa yang bisa mengubah keputusan.
+Jangan menebak harga atau spesifikasi yang belum diketahui.
 ```
 
-**Hasil yang didapat:** draf siap ditinjau, usulan rencana yang realistis, atau perbandingan yang menjelaskan ketidakpastiannya.
+**Hasil yang dituju:** pesan atau rencana siap ditinjau. Tugas kecil tidak membutuhkan satu pack lengkap atau profil proyek.
 
 <a id="features"></a>
-## Fitur di balik contoh-contoh tadi
+## Isi paket
 
-Tidak perlu memilih fitur secara manual. BTR mengarahkan cara kerja berdasarkan hasil yang kamu minta.
-
-| Fitur | Manfaat | Panduan |
+| Fitur | Kegunaan | Panduan |
 | --- | --- | --- |
-| **Hook Lab** | 24 formula kreatif untuk hook jualan dan affiliate, pemeriksaan variasi, serta hubungan hook dengan demo | [Hook Lab](brief-to-result/references/hook-lab.md) |
-| **Outcome Packs** | Beberapa hasil yang saling terkait memakai satu kumpulan fakta | [Protokol pack](brief-to-result/references/outcome-packs.md) |
-| **Project Profiles** | Preferensi dan fakta proyek bersumber yang dipilih secara eksplisit | [Panduan profil](brief-to-result/references/project-profiles.md) |
-| **Repair Mode** | Revisi terarah sambil menjaga teks dan bagian di luar lingkup | [Panduan revisi](brief-to-result/references/repair-mode.md) |
-| **80 workflow** | Penulisan, pemahaman, ide, penjualan, konten, produk, teknis, dan operasional | [Instruksi utama](brief-to-result/SKILL.md) |
+| Dialog adaptif | Pertanyaan penting, pemeriksaan blindspot, pemakaian jawaban, dan aturan berhenti | [Dialog](brief-to-result/references/adaptive-dialogue.md) |
+| Hook Lab | Pembuka jualan dan affiliate dengan 24 formula kreatif | [Hook Lab](brief-to-result/references/hook-lab.md) |
+| Outcome Packs | Beberapa hasil terkait dengan fakta sumber yang sama | [Packs](brief-to-result/references/outcome-packs.md) |
+| Project Profiles | Preferensi lokal yang dipilih serta fakta dengan sumber dan tanggal | [Profil](brief-to-result/references/project-profiles.md) |
+| Repair Mode | Revisi bagian tertentu sambil menjaga teks di sekitarnya | [Revisi](brief-to-result/references/repair-mode.md) |
+| 80 workflow | Menulis, memahami, ide, penjualan, konten, produk, teknis, operasional | [SKILL.md](brief-to-result/SKILL.md) |
 
-24 formula hook melengkapi 80 workflow, bukan tambahan 24 workflow umum. Kegunaan kreatifnya tetap perlu dinilai dalam penggunaan nyata.
+Tiga pack yang tersedia: [Launch Kit](brief-to-result/packs/launch-kit.md), [Idea to Build](brief-to-result/packs/idea-to-build.md), dan [Research to Content](brief-to-result/packs/research-to-content.md). Lingkup permintaan mengalahkan hasil bawaan. Satu email tidak otomatis menjadi kampanye; bagian yang terhambat tidak boleh diisi dengan karangan.
 
-### Tiga Outcome Packs
+Profil bersifat lokal dan opt-in, bukan memori tersembunyi antar-chat. Label `confirmed` dikelola pengguna, bukan bukti verifikasi independen. Fakta kedaluwarsa, belum terverifikasi, atau tidak berlaku tidak boleh mengisi kekosongan copy. File tidak dienkripsi, dan profil yang dipilih bisa dibaca model. Jangan simpan kredensial atau data pribadi pelanggan.
 
-| Pack | Hasil bawaan |
-| --- | --- |
-| [Launch Kit](brief-to-result/packs/launch-kit.md) | Pesan utama, email, draf sosial, FAQ, checklist peluncuran, sumber dan informasi terbuka |
-| [Idea to Build](brief-to-result/packs/idea-to-build.md) | Brief, alur pengguna, acceptance criteria, tugas implementasi, keputusan terbuka |
-| [Research to Content](brief-to-result/packs/research-to-content.md) | Peta sumber, rangkuman, angle, draf konten, catatan verifikasi |
+Repair Mode membedakan usulan perubahan dengan perubahan yang benar-benar dikerjakan. Helper teks UTF-8 opsional memeriksa hash sumber dan teks terkunci, menampilkan diff, serta menulis hanya ke file baru. Helper tidak memverifikasi kebenaran isi atau mengedit dokumen biner.
 
-Lingkup permintaanmu mengalahkan hasil bawaan. Satu email tidak otomatis menjadi kampanye lengkap. Pack dijalankan oleh agent; helper Python tidak menghasilkan konten atau memanggil model.
+Bahasa dasar dokumentasi tetap Inggris. Hasil mengikuti bahasa dan konteks yang diminta; teks yang diedit mempertahankan bahasanya kecuali diminta diterjemahkan. Bahasa Inggris tidak otomatis berarti pasar AS, dolar, atau zona waktu tertentu.
 
-### Pakai ulang konteks proyek dan revisi dengan tepat
-
-```text
-@btr gunakan profil proyek .btr/profiles/northstar.json untuk pengumuman ini.
-```
-
-Profil bersifat opsional dan harus dipilih, bukan memori tersembunyi atau penyimpanan otomatis lintas chat. Instruksi tugas terbaru mengalahkan preferensi. Fakta produk memiliki sumber dan tanggal tinjauan; fakta yang disisihkan atau kedaluwarsa tidak boleh diam-diam mengisi kekosongan. Label `confirmed` dikelola pengguna, bukan verifikasi independen. File lokal tidak dienkripsi dan isinya dapat dilihat model saat kamu meminta agent membacanya. Jangan simpan kredensial atau data pribadi pelanggan.
-
-```text
-@btr ringkas paragraf kedua saja. Harga, syarat, dan CTA jangan berubah.
-```
-
-Repair Mode memandu revisi agent. Helper teks UTF-8 opsional bisa memeriksa hash sumber, teks terkunci, dan batas perubahan, menampilkan diff, lalu menulis ke file baru saja. Makna dan gaya tetap perlu ditinjau; instruksi prompt saja bukan perlindungan deterministik.
-
+<a id="installation"></a>
 ## Instalasi
 
-### Buat paket dengan nama pendek btr
-
-Sumber utama berada di `brief-to-result/`. Builder membuat skill mandiri bernama `btr`, lengkap dengan panduan, helper, dan lisensi MIT.
+Sumber utama ada di `brief-to-result/`. Builder membuat paket skill mandiri bernama `btr`, lengkap dengan seluruh sumber runtime dan lisensi MIT.
 
 ```bash
 git clone https://github.com/makanSukros/brief-to-result.git
@@ -453,27 +369,25 @@ cd brief-to-result
 python3 tools/build_btr.py --output dist/btr.zip
 ```
 
-Impor `dist/btr.zip` melalui proses pemasangan skill yang didukung aplikasimu, lalu aktifkan/pilih BTR. Lihat [panduan pemanggilan](brief-to-result/references/invocation.md) untuk langkah khusus aplikasi. Publikasi ke GitHub atau mengetik `@btr` tidak otomatis memasangnya ke akun.
+Impor ZIP melalui alur unggah skill yang didukung aplikasi, tinjau, lalu aktifkan. Pemilihan `@` atau `$` mengikuti aplikasi; publikasi GitHub tidak memasangnya otomatis di akunmu. Lihat [panduan per aplikasi](brief-to-result/references/invocation.md).
 
-Untuk pemasangan lokal pertama pada agent yang mendukung `~/.agents/skills/`:
+Untuk pemasangan pertama pada client yang mendukung `~/.agents/skills/`:
 
 ```bash
 python3 tools/build_btr.py --directory "$HOME/.agents/skills/btr"
 ```
 
-Builder menolak lokasi yang sudah ada. Periksa/cadangkan instalasi lama sebelum menggantinya; gunakan lokasi sesuai dokumentasi client jika berbeda. Sebaiknya aktifkan satu instalasi agar tidak muncul entri ganda. Simpan profil proyek di luar direktori instalasi skill.
+Builder menolak lokasi yang sudah ada. Periksa/cadangkan instalasi lama sebelum menggantinya, simpan profil di luar folder skill, dan gunakan satu instalasi aktif. Nama panjang tetap didukung. Jangan hanya mengganti nama folder asli: nama direktori dan metadata harus cocok.
 
-Instalasi `brief-to-result/` tetap didukung. Menyalin direktori utama memasang nama panjang, bukan `btr`; jangan sekadar mengganti nama folder karena nama direktori dan metadata harus sesuai. Gunakan builder untuk nama pendek. Lihat [detail pemanggilan](brief-to-result/references/invocation.md) untuk pemilihan nama panjang dan batas alias.
-
-Instruksi Markdown bisa diikuti tanpa Python. Builder dan `btr.py` membutuhkan **Python 3.10+**, memakai standard library, dan tidak memanggil jaringan/model. Kamu tetap membutuhkan agent yang kompatibel beserta akses modelnya.
+Instruksi Markdown bisa diikuti tanpa Python. Pembuatan paket dan helper baru membutuhkan **Python 3.10+**, hanya standard library, tanpa panggilan jaringan atau model. Kamu tetap membutuhkan agent yang kompatibel beserta akses modelnya. Ini bukan chatbot mandiri atau layanan latar belakang.
 
 <a id="local-tools"></a>
 ## Alat bantu lokal opsional
 
-Permintaan menulis, membuat hook, dan menyusun rencana biasa tidak mengharuskanmu menjalankan perintah ini. Contoh berikut dijalankan dari root repository hasil clone; untuk versi terpasang, ganti awalan `brief-to-result/` dengan lokasi sebenarnya.
+Untuk penggunaan sehari-hari, cukup minta seperti biasa. Perintah berikut dijalankan dari root repository; sesuaikan lokasi jika memakai versi terpasang.
 
 <details>
-<summary><strong>Cari pack dan workflow</strong></summary>
+<summary><strong>Lihat pack dan workflow</strong></summary>
 
 ```bash
 python3 brief-to-result/scripts/btr.py packs list
@@ -484,20 +398,7 @@ python3 brief-to-result/scripts/lookup.py --query "caption"
 python3 brief-to-result/scripts/text_metrics.py --help
 ```
 
-Perintah pack menampilkan instruksi, bukan menghasilkan konten. `--json` memberikan metadata pack yang bisa dibaca program.
-
-| Bidang | ID |
-| --- | --- |
-| Penulisan dan penyuntingan | W01–W10 |
-| Pemahaman dan pembelajaran | U01–U10 |
-| Ide dan strategi | I01–I10 |
-| Penjualan dan persuasi | M01–M10 |
-| Konten dan storytelling | C01–C10 |
-| Produk dan UX | P01–P10 |
-| Pekerjaan teknis | T01–T10 |
-| Operasional dan keputusan | O01–O10 |
-
-Setiap workflow berisi pemicu, input, metode, bentuk hasil, pemeriksaan, dan contoh.
+Perintah ini menampilkan instruksi atau menghitung teks, bukan membuat hasil dengan model. ID 80 workflow tetap W01-W10, U01-U10, I01-I10, M01-M10, C01-C10, P01-P10, T01-T10, dan O01-O10. Dua puluh empat formula H adalah resep kreatif tambahan, bukan workflow umum baru.
 
 </details>
 
@@ -506,19 +407,19 @@ Setiap workflow berisi pemicu, input, metode, bentuk hasil, pemeriksaan, dan con
 
 ```bash
 python3 brief-to-result/scripts/btr.py profiles init northstar
-# Edit .btr/profiles/northstar.json dengan preferensi dan fakta proyek yang sebenarnya.
+# Edit .btr/profiles/northstar.json dengan preferensi dan fakta yang benar.
 python3 brief-to-result/scripts/btr.py profiles check .btr/profiles/northstar.json
 python3 brief-to-result/scripts/btr.py profiles context .btr/profiles/northstar.json
 ```
 
-Inisialisasi menolak menimpa profil dan membuat file ignore lokal jika belum ada. Aturan ignore tidak melindungi file yang sudah dilacak Git; periksa `git status` sebelum commit. Tambahkan `--as-of YYYY-MM-DD` untuk pemeriksaan tanggal yang dapat diulang atau `--strict` pada `profiles check` agar pemeriksaan gagal jika ada fakta yang disisihkan. Lihat [template](brief-to-result/assets/profile.template.json) dan [aturan skema](brief-to-result/references/project-profiles.md).
+Inisialisasi menolak overwrite dan membuat file ignore jika belum ada. Aturan ignore tidak melindungi file yang sudah dilacak; periksa `git status`. Gunakan `--as-of YYYY-MM-DD` untuk memeriksa kesegaran fakta secara berulang, atau `--strict` agar fakta yang disisihkan membuat pemeriksaan gagal. Lihat [template](brief-to-result/assets/profile.template.json) dan [skema](brief-to-result/references/project-profiles.md).
 
 </details>
 
 <details>
-<summary><strong>Preview dan terapkan revisi teks terarah</strong></summary>
+<summary><strong>Preview revisi teks terarah</strong></summary>
 
-Contoh Northstar yang disertakan bersifat fiktif. Buat rencana untuk baris pertamanya:
+Contoh Northstar bersifat fiktif.
 
 ```bash
 mkdir -p .btr
@@ -526,7 +427,7 @@ python3 brief-to-result/scripts/btr.py repair plan examples/repair-before.txt \
   --allow 1:1 --keep "Try the demo." --output .btr/repair.json
 ```
 
-Edit hanya nilai `replacement` di `.btr/repair.json` dengan mempertahankan `\n` di ujungnya. Contoh: `Export your report without retyping it.\n`. Lalu:
+Edit hanya nilai `replacement`, pertahankan `\n` di ujungnya. Contoh: `Export your report without retyping it.\n`. Lalu:
 
 ```bash
 python3 brief-to-result/scripts/btr.py repair preview examples/repair-before.txt --plan .btr/repair.json
@@ -534,28 +435,32 @@ python3 brief-to-result/scripts/btr.py repair apply examples/repair-before.txt \
   --plan .btr/repair.json --output .btr/revised.txt
 ```
 
-Ulangi `--allow START:END` untuk beberapa rentang baris sumber yang terpisah dan `--keep` untuk teks tambahan yang harus tetap persis. Preview tidak menulis file; apply menolak tujuan yang sudah ada. Helper menolak rencana kedaluwarsa serta rentang tidak valid atau bertumpuk. Hanya teks UTF-8, bukan dokumen biner. Rencana berisi cuplikan sumber; perlakukan sesuai kerahasiaan sumbernya. Batas lingkup adalah kontrak yang dapat ditinjau, bukan sandbox keamanan.
+Preview tidak menulis file; apply menolak tujuan yang sudah ada. Ulangi `--allow START:END` untuk rentang baris asli yang terpisah dan `--keep` untuk teks terkunci. Rencana mengandung cuplikan sumber, jadi jaga kerahasiaannya. Ini kontrak lingkup yang bisa ditinjau, bukan sandbox keamanan.
 
 </details>
 
-## Bahasa, bukti, dan batasan
+<details>
+<summary><strong>Periksa keputusan dialog</strong></summary>
 
-Bahasa dasar skill dan [README utama](README.md) tetap Inggris; README Indonesia ini menyediakan jalur penggunaan yang sama. Hasil kerja mengikuti bahasa yang diminta dan konteks audiens yang sudah jelas. Teks yang disunting mempertahankan bahasa aslinya kecuali diminta diterjemahkan. Bahasa Inggris tidak berarti otomatis pasar AS, harga dolar, atau zona waktu tertentu.
+```bash
+python3 brief-to-result/scripts/dialogue_policy.py --state path/to/approved-local-state.json
+```
 
-Contoh adalah permintaan dan ilustrasi yang bisa disesuaikan, bukan testimoni atau hasil benchmark model. Periksa klaim penting sebelum publikasi. Pengalaman affiliate, promo, harga, kelangkaan stok, dan perbandingan harus punya dasar nyata. BTR diarahkan mengganti angle yang tidak didukung, bukan mengarang bukti. Keterangan hubungan komersial harus sesuai kenyataannya; skill bukan sertifikasi kepatuhan hukum semua negara.
+Helper opsional ini membaca state terstruktur dan merekomendasikan langkah berikutnya. Ia tidak memahami percakapan mentah, menemukan blindspot sendiri, memverifikasi fakta, memanggil model, menulis file, atau memberi izin tindakan. Pengguna biasa tidak perlu membuat JSON. Lihat [kontrak state](brief-to-result/references/adaptive-dialogue.md).
 
-Browsing, pembuatan media, integrasi, dan operasi file bergantung pada alat serta izin agent. Draf tidak otomatis dikirim, uang iklan tidak dibelanjakan, dan pekerjaan latar belakang tidak dibuat hanya karena disebut dalam workflow.
+</details>
 
-## Pengujian
+<a id="tests"></a>
+## Pengujian dan batasan
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
 
-Tes mencakup helper lokal, paket instalasi, penanganan error, kesegaran profil, batas revisi, struktur katalog, dan sumber dokumentasi. Lihat [contoh pengujian manual](examples/README.md) serta [kasus Hook Lab](brief-to-result/references/hook-examples.md). Lulus tes lokal tidak membuktikan kreativitas, kebenaran fakta, perilaku identik di semua agent, atau peningkatan conversion.
+Tes mencakup perilaku helper, kasus error, perpindahan keputusan dialog, pertanyaan berulang, jawaban belum tahu, koreksi, kemasan, integritas katalog, serta tautan lokal. [Delapan walkthrough percakapan](evals/dialogue-walkthroughs.json) berisi respons yang dibuat saat pengembangan dan pemeriksaan mekanis. Ini **tinjauan oleh pembuatnya sendiri, bukan eksekusi terpisah di aplikasi atau benchmark model independen**. Lihat [catatan evaluasi](evals/README.md) untuk perbedaan dan prosedur pengujian aplikasi nyata.
 
-Kode keluar helper: `0` berhasil, `1` ada fakta yang disisihkan saat pemeriksaan profil strict, `2` input tidak valid atau gagal menulis. `text_metrics.py` memakai `1` ketika pemeriksaan panjang gagal. Kalau sumber revisi berubah, buat rencana baru; file asli tidak pernah ditimpa helper revisi.
+Lulus tes tidak membuktikan hasil identik di semua agent, ketepatan makna, kenaikan conversion, atau memori permanen. Penafsiran oleh model tetap berpengaruh. Kode keluar helper: `0` berhasil, `1` fakta disisihkan dalam pemeriksaan profil strict atau batas panjang teks gagal, `2` input tidak valid atau gagal menulis.
 
 ## Lisensi dan perubahan
 
-[MIT](LICENSE), copyright (c) 2026 makanSukros. [Salinan lisensi](brief-to-result/LICENSE) ikut dalam pemasangan skill mandiri. Lihat [CHANGELOG.md](CHANGELOG.md) untuk perubahan versi sumber.
+[MIT](LICENSE), copyright (c) 2026 makanSukros. [Salinan lisensi](brief-to-result/LICENSE) ikut dalam paket mandiri. Lihat [CHANGELOG.md](CHANGELOG.md). Nomor versi menunjukkan perubahan sumber, bukan otomatis GitHub Release atau sertifikasi aplikasi.

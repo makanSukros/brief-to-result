@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.0 — 2026-10-22
+
+- Add a cross-workflow adaptive dialogue contract: consequential questions, proactive blindspot checks, source inspection, answer reuse, corrections, unknown/deferred decisions, and explicit stop conditions.
+- Replace the blockers-only clarification rule with a consequence-based decision: ask only when the answer changes correctness or direction enough to justify interrupting the work.
+- Respect guided conversations and no-questions requests without inventing essential facts; show tangible progress after two optional question rounds by default.
+- Add an optional, standard-library structured dialogue policy helper. It makes no model/network calls, interprets no raw conversation, writes no files, and grants no permissions.
+- Add policy transition, error-path, installed-package, and saved-output regression tests. Retain a regression for mandatory-input prioritization found during testing.
+- Add eight author-reviewed dialogue walkthroughs with 13 saved responses, explicit provenance, and a separate live-host evaluation procedure. These are not independent model benchmarks.
+- Update English and Indonesian READMEs with interaction examples while retaining ten role categories and three copyable requests per category.
+- Preserve 80 workflows, 24 Hook Lab formulas, three packs, opt-in profiles, scoped repair, short-name packaging, and MIT licensing.
+
 ## 0.3.0 — 2026-10-22
 
 - Add an agent-run sales and affiliate Hook Lab with 24 formula families across six persuasive mechanisms.
