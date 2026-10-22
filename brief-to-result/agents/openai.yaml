@@ -1,7 +1,7 @@
 interface:
   display_name: "Brief to Result"
-  short_description: "80 workflows that turn requests into usable results"
-  default_prompt: "Use $brief-to-result to turn my request into a clear, accurate, ready-to-use result for my intended audience."
+  short_description: "Outcome packs, project context, and precise repairs"
+  default_prompt: "Use $brief-to-result to produce a clear, accurate, ready-to-use result. Choose a relevant workflow or Outcome Pack, use only a project profile I select, and preserve unaffected content when I ask for a targeted repair."
 
 policy:
   allow_implicit_invocation: false

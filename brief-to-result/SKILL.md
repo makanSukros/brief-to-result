@@ -1,7 +1,9 @@
 ---
 name: brief-to-result
-description: "Turn short or underspecified requests into useful finished work with 80 focused workflows for writing, explanation, ideas, sales, content, product, technical work, and decisions. Use when the user explicitly invokes Brief to Result, requests this reusable workflow, or asks to strengthen a brief or prompt. Execute the requested work by default; produce only a prompt when asked. Use English as the base language and adapt deliverables to the user's requested language and audience. Do not activate on every generic question or replace applicable specialist skills."
 license: MIT
+metadata:
+  version: "0.2.0"
+description: "Turn short or underspecified requests into useful finished work with 80 workflows, three Outcome Packs, optional local Project Profiles, and scoped Repair Mode. Covers writing, research, product, technical work, and decisions. Use when the user explicitly invokes Brief to Result, requests this reusable workflow, or asks to strengthen a brief or prompt. Execute the requested work by default; produce only a prompt when asked. Use English as the base language and adapt deliverables to the user's requested language and audience. Do not activate on every generic question or replace applicable specialist skills."
 ---
 
 # Brief to Result
@@ -12,10 +14,17 @@ Turn short requests into clear, accurate, usable results. Choose from 80 focused
 
 - **Execute** — the default. When asked to improve a draft, provide the improved draft. Do not return only a more elaborate prompt.
 - **Create a prompt** — use only when asked for a prompt, instruction template, or brief for someone else. Provide reusable instructions with meaningful variables; do not execute the task inside that prompt.
+- **Repair** — make a targeted revision to an existing artifact while preserving the rest. Read [repair-mode.md](references/repair-mode.md); a request for a repair prompt still uses Create a prompt mode.
 - **Audit** — assess the supplied material. State the main findings, supporting evidence, consequences, and improvements. Include a revision when requested or clearly within scope.
 - **Menu** — show the relevant workflow options when asked about capabilities. Do not run the entire catalog.
 
 Keep the skill's base language separate from a deliverable's language. Follow an explicit language request first, then a clearly specified audience or project language. When editing existing text, preserve its language unless translation is requested. For newly drafted content without a language requirement, default to clear, natural English. Do not assume that English means a US audience or that a user's name determines their language or location.
+
+## Optional project context
+
+When the user selects a project profile, read [project-profiles.md](references/project-profiles.md). Use only the supplied path or the named `.btr/profiles/<id>.json` in the current project. Do not scan other projects, silently create profiles, or save inferred preferences. Explicit task instructions take precedence over profile defaults; editing preserves the source language unless translation is requested. Resolve factual conflicts through evidence, not preference precedence.
+
+Profile facts with stale, unverified, or deprecated status must not fill gaps in publishable output. The local `profiles context` helper filters eligibility, not truth; current verification may still be necessary. A missing profile does not prevent useful work from available context. Never store credentials or assume that local files are invisible to the host model.
 
 ## 2. Build a sufficient working brief
 
@@ -30,6 +39,17 @@ For simulations explicitly requested by the user, create illustrative details as
 Keep currencies, units, time zones, regional conventions, and cultural references grounded in the brief. Preserve supplied units and use unambiguous dates. Ask about a locale only if it materially changes the work. See [preferences.md](references/preferences.md) for global language and audience defaults.
 
 ## 3. Route by the requested outcome
+
+**For a named pack or an explicitly requested multi-output bundle**, read the [shared pack contract](references/outcome-packs.md), then only the selected pack:
+
+| Pack | Use for | Instructions |
+| --- | --- | --- |
+| Launch Kit | Consistent launch message, email, social drafts, FAQ, and checklist | [launch-kit.md](packs/launch-kit.md) |
+| Idea to Build | Feature brief, flows, acceptance criteria, tasks, and open decisions | [idea-to-build.md](packs/idea-to-build.md) |
+| Research to Content | Source map, synthesis, angles, draft, and verification notes | [research-to-content.md](packs/research-to-content.md) |
+
+Keep one source-fact ledger across all deliverables. Apply explicit count/channel/scope overrides, identify blocked outputs, and never treat preparation as publication or a specification as implemented code. For targeted revisions, Repair Mode takes precedence over regenerating the whole pack. For single outputs, keep the original workflow routing below.
+
 
 Choose one primary workflow and, when useful, one supporting workflow. For a larger request with several explicit deliverables, use proportionate stages. Do not expand a one-sentence edit into a full project.
 
@@ -98,6 +118,19 @@ Lead with the finished result. Add a short rationale, material assumption, or ne
 For copy-ready or plain-text requests, provide that format. Use writing blocks when supported and appropriate; separate variants or posts for easy copying. For requested files, images, applications, or visualizations, create the artifact with suitable tools. A concept description is not a completed artifact.
 
 Do not send messages, publish, purchase, or modify external systems merely because a workflow mentions those actions. Follow existing session authorization and tool boundaries; do not ask again for actions already authorized.
+
+## Local helpers
+
+Python 3.10+ is required only for `scripts/btr.py`; the agent can follow all three feature guides without Python. These commands do not call a model or grant external-action permissions:
+
+```bash
+python3 <skill-dir>/scripts/btr.py packs list
+python3 <skill-dir>/scripts/btr.py packs show launch-kit
+python3 <skill-dir>/scripts/btr.py profiles context .btr/profiles/northstar.json
+python3 <skill-dir>/scripts/btr.py repair --help
+```
+
+Pack selection is intent-based; the helper is not an autonomous orchestrator. Use the [profile template](assets/profile.template.json) for authorized profile creation. Profile and repair writes are opt-in and must stay within the user's selected local paths. Never claim deterministic enforcement without actually running the relevant helper.
 
 ## Additional references
 

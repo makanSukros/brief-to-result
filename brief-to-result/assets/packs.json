@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "packs": [
+    {
+      "id": "launch-kit", "title": "Launch Kit", "reference": "packs/launch-kit.md",
+      "workflows": ["I04", "M06", "C09", "O09", "I09"],
+      "outputs": ["message", "email", "social-posts", "faq", "launch-checklist", "evidence-and-open-items"]
+    },
+    {
+      "id": "idea-to-build", "title": "Idea to Build", "reference": "packs/idea-to-build.md",
+      "workflows": ["P01", "P05", "P09", "P10", "T01", "O04"],
+      "outputs": ["brief", "user-flow", "acceptance-criteria", "implementation-tasks", "open-decisions"]
+    },
+    {
+      "id": "research-to-content", "title": "Research to Content", "reference": "packs/research-to-content.md",
+      "workflows": ["U09", "U04", "I02", "C09"],
+      "outputs": ["source-map", "summary", "angles", "draft", "verification-notes"]
+    }
+  ]
+}
