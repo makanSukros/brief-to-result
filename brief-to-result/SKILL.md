@@ -1,6 +1,7 @@
 ---
 name: brief-to-result
 description: "Turn short or underspecified requests into useful finished work with 80 focused workflows for writing, explanation, ideas, sales, content, product, technical work, and decisions. Use when the user explicitly invokes Brief to Result, requests this reusable workflow, or asks to strengthen a brief or prompt. Execute the requested work by default; produce only a prompt when asked. Use English as the base language and adapt deliverables to the user's requested language and audience. Do not activate on every generic question or replace applicable specialist skills."
+license: MIT
 ---
 
 # Brief to Result
