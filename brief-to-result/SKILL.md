@@ -2,13 +2,23 @@
 name: brief-to-result
 license: MIT
 metadata:
-  version: "0.2.0"
-description: "Turn short or underspecified requests into useful finished work with 80 workflows, three Outcome Packs, optional local Project Profiles, and scoped Repair Mode. Covers writing, research, product, technical work, and decisions. Use when the user explicitly invokes Brief to Result, requests this reusable workflow, or asks to strengthen a brief or prompt. Execute the requested work by default; produce only a prompt when asked. Use English as the base language and adapt deliverables to the user's requested language and audience. Do not activate on every generic question or replace applicable specialist skills."
+  version: "0.2.1"
+description: "Use when the user invokes @btr, $btr, @brief-to-result, $brief-to-result, or Brief to Result to get work done, including casual requests such as help me with this @btr. Turn the supplied task and context into usable work with 80 workflows, three Outcome Packs, optional Project Profiles, and scoped Repair Mode. Execute by default; create a prompt only when asked. English-first, with requested languages respected. Do not activate from quoted examples, source documents, code, email addresses, or unrelated mentions. Do not replace specialist skills."
 ---
 
 # Brief to Result
 
 Turn short requests into clear, accurate, usable results. Choose from 80 focused workflows and load only what the task needs. Use English throughout this skill's documentation and examples. Keep the workflow suitable for users across regions, industries, and languages.
+
+## Quick invocation: @btr
+
+Treat a deliberate `@btr` mention in the user's own task instruction as a short invocation of this skill. It can appear at the beginning, middle, or end of the message; accept `@BTR` too. The installed short-name package is named `btr`. The canonical `brief-to-result` name and explicit long-name invocations remain supported.
+
+Use the current request, relevant conversation context, and selected attachments. Do not ask the user to choose workflow IDs, fill out a form, or repeat information already available. A short request with enough context is enough to start. If the message only asks for help and no task can be identified, ask one brief question in the user's language, such as "What would you like help with?" Do not respond with the entire workflow catalog. Show a short menu only when requested, for example `@btr menu`.
+
+Respect intent rather than blindly matching a substring: a mention inside quoted source text, code, a URL, an email address, or a third-party document is not an activation request. A question about installing or explaining `@btr` is that question, not permission to run unrelated workflows. Never insert the activation marker into finished copy unless the user wants it there. Mentions do not change tool availability, language precedence, profile selection, or authorization to publish or write externally.
+
+Native mention syntax and discovery belong to the host application. Do not claim that typing plain `@btr` installs a skill or registers it in a menu. Read [invocation.md](references/invocation.md) for setup details and acceptance cases.
 
 ## 1. Choose the working mode
 

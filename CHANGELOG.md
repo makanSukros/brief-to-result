@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 — 2026-10-22
+
+- Add @btr task-invocation guidance, contextual routing, and one-question handling when a task is missing.
+- Add a reproducible, standalone short-name `btr` package builder; preserve canonical `brief-to-result` installations.
+- Expose BTR in interface metadata and allow description-based matching for deliberate text mentions.
+- Document native ChatGPT @ selection versus Codex CLI/IDE $ selection without claiming automatic installation.
+- Add English and Indonesian quick-start examples and packaging regression tests.
+
 ## 0.2.0 — 2026-10-22
 
 - Add three agent-run Outcome Packs: Launch Kit, Idea to Build, Research to Content.

@@ -8,6 +8,26 @@
 
 Ceritakan kebutuhanmu dengan bahasa biasa, lalu sertakan teks, catatan, atau file yang relevan. Skill ini memandu agent yang kompatibel untuk memilih cara kerja, mengikuti batasan, dan memeriksa hasilnya. Kamu tidak perlu menghafal ID workflow atau menyusun prompt panjang untuk setiap tugas.
 
+## Cukup panggil @btr
+
+Setelah memasang paket **btr**, pilih skill-nya lalu ngobrol seperti biasa:
+
+```text
+tolong dong bantu saya @btr
+```
+
+```text
+@btr bantu rapihin pesan ini, sopan tapi jangan kaku
+```
+
+```text
+catatan rapat ini jadiin tugas yang jelas dong @btr
+```
+
+Mention boleh di awal, tengah, atau akhir permintaan. BTR memakai percakapan dan bahan yang relevan, lalu memilih cara kerja. Tidak perlu hafal nomor workflow, nama pack, atau perintah teknis untuk pemakaian sehari-hari. Kalau tugas dan konteksnya belum ada, cukup satu pertanyaan singkat, misalnya: **“Mau dibantu apa?”** Ketik `@btr menu` hanya saat ingin melihat beberapa pilihan.
+
+**Di ChatGPT yang mendukung Skills:** ketik `@`, cari **BTR — Brief to Result**, lalu pilih skill yang sudah dipasang. **Di Codex CLI/IDE:** gunakan `$btr`. Teks mention saja tidak memasang skill atau menjamin pemilihan melalui menu. Ikuti [instalasi nama pendek](#instalasi) di bawah; instalasi nama panjang tetap didukung. Lihat [panduan pemanggilan](brief-to-result/references/invocation.md) untuk detail dan batasannya.
+
 ## Apa itu Brief to Result?
 
 Ini adalah **kumpulan instruksi, contoh, dan alat bantu lokal opsional yang bisa dipakai ulang oleh agent AI**. Anggap sebagai panduan kerja untuk agent, bukan aplikasi chatbot terpisah atau model AI baru.
@@ -39,20 +59,20 @@ Siapa pun yang memakai agent AI yang kompatibel untuk pekerjaan atau belajar seh
 
 ## Contoh penggunaan sehari-hari
 
-Setelah terpasang, mulai dengan **“Gunakan Brief to Result”**, lalu jelaskan tugas dan tempelkan atau lampirkan bahan yang relevan. Contoh berikut bisa kamu sesuaikan dengan kebutuhan; bentuk hasilnya merupakan tujuan penggunaan, bukan hasil benchmark.
+Setelah terpasang, panggil **@btr**, lalu jelaskan tugas dan tempelkan atau lampirkan bahan yang relevan. Contoh berikut bisa kamu sesuaikan dengan kebutuhan; bentuk hasilnya merupakan tujuan penggunaan, bukan hasil benchmark.
 
 | Situasi | Contoh permintaan | Hasil yang berguna |
 | --- | --- | --- |
-| Ingin menolak undangan dengan sopan. | “Bantu saya menolak undangan ini dengan ramah. Buat singkat dan jangan mengarang alasan.” | Balasan sopan tanpa alasan palsu atau komitmen baru. |
-| Perlu menanyakan perkembangan pekerjaan. | “Buat pesan follow-up ini ramah tetapi jelas. Pertahankan tenggat yang sudah ada di draf saya.” | Pesan siap ditinjau dengan permintaan dan tenggat asli tetap utuh. |
-| Catatan rapat masih berantakan. | “Jadikan catatan ini keputusan, tugas, penanggung jawab, dan tenggat. Tandai yang belum disepakati.” | Ringkasan tindakan yang membedakan penugasan pasti dan pertanyaan terbuka. |
-| Ada materi belajar yang sulit dipahami. | “Jelaskan materi ini untuk pemula, beri satu contoh konkret, lalu buat tiga soal latihan.” | Penjelasan dan latihan singkat berdasarkan bahan yang diberikan. |
-| Pekerjaan minggu ini terlalu banyak. | “Ini daftar tugas, tenggat, dan waktu luang saya yang hanya enam jam. Pilih tiga prioritas dan apa yang ditunda.” | Usulan rencana sesuai kapasitasmu, tanpa mengubah kalender. |
-| Dokumen panjang sulit ditindaklanjuti. | “Rangkum dokumen ini: apa yang berubah, apa yang harus saya lakukan, dan apa yang belum jelas.” | Poin penting dan langkah berikutnya, dengan informasi yang belum tersedia ditandai. |
-| Ada pelanggan yang menyampaikan keluhan. | “Buat balasan yang tenang berdasarkan keluhan dan kebijakan layanan ini. Jangan menjanjikan refund atau tanggal kirim yang belum pasti.” | Draf yang empatik dengan langkah berikutnya yang didukung informasi. |
-| Satu update produk perlu diumumkan di beberapa tempat. | “Gunakan Launch Kit: ubah catatan rilis ini menjadi satu email pelanggan dan dua postingan sosial. Gunakan fakta produk yang sama.” | Draf yang konsisten dan disesuaikan untuk tiap kanal. |
-| Ide fitur belum cukup jelas untuk diteruskan ke tim. | “Gunakan Idea to Build: jadikan ide ini brief, alur pengguna, kriteria penerimaan, dan tugas implementasi. Jangan coding dulu.” | Bahan kerja yang terstruktur, termasuk keputusan yang belum selesai. |
-| Draf sudah bagus, tetapi pembukanya kurang pas. | “Gunakan Repair Mode: ubah pembukanya saja. Pertahankan teks lainnya dan ajakan bertindak tanpa perubahan.” | Revisi terarah, bukan penulisan ulang seluruh draf yang tidak diperlukan. |
+| Ingin menolak undangan dengan sopan. | “@btr bantu saya menolak undangan ini dengan ramah. Buat singkat dan jangan mengarang alasan.” | Balasan sopan tanpa alasan palsu atau komitmen baru. |
+| Perlu menanyakan perkembangan pekerjaan. | “@btr buat pesan follow-up ini ramah tetapi jelas. Pertahankan tenggat yang sudah ada di draf saya.” | Pesan siap ditinjau dengan permintaan dan tenggat asli tetap utuh. |
+| Catatan rapat masih berantakan. | “@btr jadikan catatan ini keputusan, tugas, penanggung jawab, dan tenggat. Tandai yang belum disepakati.” | Ringkasan tindakan yang membedakan penugasan pasti dan pertanyaan terbuka. |
+| Ada materi belajar yang sulit dipahami. | “@btr jelaskan materi ini untuk pemula, beri satu contoh konkret, lalu buat tiga soal latihan.” | Penjelasan dan latihan singkat berdasarkan bahan yang diberikan. |
+| Pekerjaan minggu ini terlalu banyak. | “@btr ini daftar tugas, tenggat, dan waktu luang saya yang hanya enam jam. Pilih tiga prioritas dan apa yang ditunda.” | Usulan rencana sesuai kapasitasmu, tanpa mengubah kalender. |
+| Dokumen panjang sulit ditindaklanjuti. | “@btr rangkum dokumen ini: apa yang berubah, apa yang harus saya lakukan, dan apa yang belum jelas.” | Poin penting dan langkah berikutnya, dengan informasi yang belum tersedia ditandai. |
+| Ada pelanggan yang menyampaikan keluhan. | “@btr buat balasan yang tenang berdasarkan keluhan dan kebijakan layanan ini. Jangan menjanjikan refund atau tanggal kirim yang belum pasti.” | Draf yang empatik dengan langkah berikutnya yang didukung informasi. |
+| Satu update produk perlu diumumkan di beberapa tempat. | “@btr ubah catatan rilis ini menjadi satu email pelanggan dan dua postingan sosial. Gunakan fakta produk yang sama.” | Draf yang konsisten dan disesuaikan untuk tiap kanal. |
+| Ide fitur belum cukup jelas untuk diteruskan ke tim. | “@btr jadikan ide ini brief, alur pengguna, kriteria penerimaan, dan tugas implementasi. Jangan coding dulu.” | Bahan kerja yang terstruktur, termasuk keputusan yang belum selesai. |
+| Draf sudah bagus, tetapi pembukanya kurang pas. | “@btr ubah pembukanya saja. Pertahankan teks lainnya dan ajakan bertindak tanpa perubahan.” | Revisi terarah, bukan penulisan ulang seluruh draf yang tidak diperlukan. |
 
 Tugas sederhana tidak membutuhkan Outcome Pack lengkap atau Project Profile. Mulai dari hasil terkecil yang menyelesaikan kebutuhanmu; gunakan struktur tambahan ketika memang diperlukan.
 
@@ -69,7 +89,7 @@ Contoh di bawah bersifat fiktif untuk menunjukkan bentuk hasil yang dituju, buka
 
 **Permintaan kamu:**
 
-> Gunakan Brief to Result. Buat pesan ini ramah dan profesional. Tetap singkat dan pertahankan tenggat yang sudah ada.
+> @btr buat pesan ini ramah dan profesional. Tetap singkat dan pertahankan tenggat yang sudah ada.
 
 **Ilustrasi hasil:**
 
@@ -88,7 +108,7 @@ Hasilnya mempertahankan permintaan dan waktu yang memang ada, tanpa menambahkan 
 
 **Permintaan kamu:**
 
-> Gunakan Brief to Result. Ambil tugas, penanggung jawab, tenggat, dan keputusan terbuka. Jangan mengisi informasi yang belum ada.
+> @btr ambil tugas, penanggung jawab, tenggat, dan keputusan terbuka. Jangan mengisi informasi yang belum ada.
 
 **Ilustrasi hasil:**
 
@@ -108,26 +128,26 @@ Catatan menjadi lebih mudah ditindaklanjuti tanpa mengarang anggaran atau tengga
 Setelah skill dipasang, minta kepada agent:
 
 ```text
-Gunakan Brief to Result: Launch Kit.
+@btr Launch Kit.
 Ubah catatan rilis ini menjadi satu email pelanggan dan dua postingan sosial.
 Gunakan hanya fakta yang tersedia. Tulis dalam bahasa Indonesia.
 Siapkan draf saja, jangan publikasikan.
 ```
 
 ```text
-Gunakan Brief to Result dengan profil proyek .btr/profiles/northstar.json.
+@btr gunakan profil proyek .btr/profiles/northstar.json.
 Jadikan ide fitur ini requirement, user flow, acceptance criteria,
 dan tugas implementasi berurutan. Tandai keputusan yang belum selesai.
 Jangan mulai coding.
 ```
 
 ```text
-Gunakan Brief to Result: Repair Mode.
+@btr Repair Mode.
 Ubah paragraf pembuka saja. Pertahankan semua fakta produk, paragraf lainnya,
 dan CTA tanpa perubahan. Berikan draf lengkap setelah revisi.
 ```
 
-Pada client yang mendukungnya, gunakan `$brief-to-result`. Cara pemanggilan dan lokasi instalasi berbeda antar-agent; repository ini tidak mengklaim sudah menguji semua client.
+Contoh ini memakai paket nama pendek yang sudah dipasang. Gunakan `$btr` di Codex CLI/IDE; instalasi nama panjang tetap memakai `$brief-to-result`. Contoh dokumentasi bukan bukti kompatibilitas semua aplikasi.
 
 ## Isi paket
 
@@ -162,23 +182,33 @@ Repair Mode menentukan target, bagian yang boleh diubah, fakta/teks yang harus d
 
 ## Instalasi
 
-Clone repository, lalu salin **seluruh** direktori `brief-to-result/` di dalamnya ke lokasi skill yang didukung agent. Jangan hanya menyalin `SKILL.md`.
+### Nama pendek: btr (disarankan)
+
+Sumber utama tetap di `brief-to-result/`. Builder menghasilkan **skill `btr` yang lengkap dan mandiri**, bukan pemanggil yang membutuhkan skill kedua. Nama skill dan prompt pemanggilan diubah, sementara seluruh panduan, helper, dan lisensi MIT tetap disertakan.
 
 ```bash
 git clone https://github.com/makanSukros/brief-to-result.git
 cd brief-to-result
+python3 tools/build_btr.py --output dist/btr.zip
 ```
 
-Untuk pemasangan pertama pada agent yang mendukung `~/.agents/skills/`:
+Untuk akun ChatGPT yang menyediakan unggah skill, impor `dist/btr.zip` melalui **Plugins → Skills → Create → Upload from your computer**, lalu tinjau dan pasang. Setelah aktif, ketik `@` dan pilih **BTR — Brief to Result**. Ketersediaan dan instalasi diatur aplikasi; publikasi GitHub tidak otomatis memasangnya ke akunmu.
+
+Untuk pemasangan lokal pertama pada agent yang mendukung `~/.agents/skills/`, bangun langsung ke direktori baru:
 
 ```bash
-mkdir -p ~/.agents/skills
-cp -R brief-to-result ~/.agents/skills/
+python3 tools/build_btr.py --directory "$HOME/.agents/skills/btr"
 ```
 
-Gunakan lokasi sesuai dokumentasi client jika berbeda. Jika sudah terpasang, periksa/cadangkan versi lama sebelum menggantinya; jangan mencampurkan file versi lama dan baru sembarangan. Simpan profil proyek di luar direktori skill agar pembaruan skill tidak mengganti data proyek.
+Builder menolak lokasi yang sudah ada dan tidak menimpa instalasi lama. Periksa/cadangkan versi lama sebelum menggantinya. Gunakan lokasi sesuai dokumentasi client jika berbeda. Di Codex CLI/IDE, pilih `$btr` atau buka `/skills`. Sebaiknya aktifkan satu instalasi agar tidak muncul entri ganda.
 
-Workflow Markdown dapat diikuti tanpa Python. Helper baru `btr.py` membutuhkan **Python 3.10+**, hanya memakai standard library, dan tidak melakukan panggilan jaringan/model. Kamu tetap membutuhkan agent yang kompatibel dan akses modelnya sendiri. Ini bukan aplikasi chatbot mandiri atau layanan otomatisasi latar belakang.
+### Instalasi nama panjang yang sudah ada
+
+`brief-to-result/` dan `$brief-to-result` tetap didukung. Menyalin direktori asli memasang nama panjang, bukan skill native bernama `btr`. Jangan hanya mengganti nama folder: nama direktori dan metadata harus cocok. Gunakan builder untuk nama pendek. Pencocokan teks `@btr` pada instalasi nama panjang bergantung pada agent yang menemukan dan menerapkan deskripsi skill; ini bukan alias menu universal.
+
+Simpan profil proyek di luar direktori instalasi skill. Instruksi Markdown bisa diikuti tanpa Python. Pembuatan paket nama pendek dan helper `btr.py` membutuhkan **Python 3.10+**, hanya memakai standard library, dan tidak memanggil jaringan/model. Kamu tetap membutuhkan agent yang kompatibel beserta akses modelnya; ini bukan chatbot mandiri atau layanan otomatisasi latar belakang.
+
+Lihat [panduan pemanggilan](brief-to-result/references/invocation.md) untuk dokumentasi resmi aplikasi dan contoh pengujian manual.
 
 ## Helper lokal
 
@@ -252,7 +282,7 @@ Setiap workflow berisi trigger, input, metode, bentuk hasil, pemeriksaan, dan co
 python3 -m unittest discover -s tests -v
 ```
 
-Tes otomatis memeriksa helper lokal, penanganan error, kesegaran fakta, batas revisi teks, integritas katalog, dan tautan dokumentasi lokal. [Contoh pengujian manual](examples/README.md) mencakup tiga pack, prioritas bahasa, dan revisi terarah. Contoh itu bukan hasil benchmark model yang sudah diukur. Lulus tes lokal tidak membuktikan perilaku identik di semua agent, kebenaran fakta, atau peningkatan performa penjualan/konten.
+Tes otomatis memeriksa paket nama pendek mandiri, helper lokal, penanganan error, kesegaran fakta, batas revisi teks, integritas katalog, dan tautan dokumentasi lokal. [Contoh pengujian manual](examples/README.md) mencakup tiga pack, prioritas bahasa, dan revisi terarah. Contoh itu bukan hasil benchmark model yang sudah diukur. Lulus tes lokal tidak membuktikan perilaku identik di semua agent, kebenaran fakta, atau peningkatan performa penjualan/konten.
 
 Kode keluar helper: `0` berhasil, `1` ada fakta yang disisihkan saat pemeriksaan profil strict, `2` input tidak valid atau gagal menulis. Helper lama `text_metrics.py` memakai `1` ketika batas panjang gagal dipenuhi. Sumber yang berubah setelah rencana revisi dibuat membutuhkan rencana baru; file asli tidak pernah ditimpa.
 
