@@ -4,9 +4,104 @@
 
 [English](README.md) | [Bahasa Indonesia](README.id.md) · [MIT License](LICENSE)
 
-An English-first, globally adaptable agent skill: **80 focused workflows, three Outcome Packs, optional Project Profiles, and scoped Repair Mode**. Ask for an outcome, reuse the context you choose, and improve only what needs changing.
+**Brief to Result helps your AI agent turn everyday requests into useful results:** a message ready to review and send, meeting notes organized into actions, a difficult topic explained clearly, or a rough idea turned into a practical plan.
 
-> Executes the requested work by default. It writes a prompt only when you ask for one. Preparing content never implies permission to publish it.
+Describe what you need in natural language and provide the relevant text, notes, or files. The skill guides a compatible agent to choose an approach, follow your constraints, and check the result. You do not need to memorize workflow IDs or write a long prompt for every task.
+
+## What is Brief to Result?
+
+It is a **reusable set of instructions, examples, and optional local tools for an AI agent**. Think of it as a work guide your agent can follow, rather than a separate chatbot or a new AI model.
+
+The skill brings together **80 focused workflows, three Outcome Packs, optional Project Profiles, and scoped Repair Mode**. You can use it for a small everyday task or a larger project, without running the entire catalog.
+
+You still need a compatible host agent and its model access. Reading files, browsing sources, generating artifacts, and other actions depend on the tools and permissions available to that agent. The skill does not add those capabilities by itself. After installation, ordinary writing and planning requests do not require coding; Python helpers are optional.
+
+> Executes the requested work by default. Ask it to improve an email and it should return the improved email—not instructions for improving it. It writes a prompt only when you ask for one. Preparing content never implies permission to send or publish it.
+
+## Purpose and practical benefits
+
+**The goal is to reduce the effort between “I need help with this” and a result you can actually use.** It is designed to make your requests easier to act on while preserving the facts, meaning, and boundaries you supply.
+
+| Everyday friction | How the skill helps |
+| --- | --- |
+| You know what you need, but not how to phrase a detailed prompt. | Starts from your request and available context; asks a focused question only when essential information is missing. |
+| The answer is generic, too long, or in the wrong format. | Uses your audience, tone, length, language, and format requirements to shape the deliverable. |
+| You keep explaining the same project or brand. | Lets you explicitly select a local Project Profile with reusable preferences and sourced facts. |
+| You need several related outputs, but their facts drift apart. | Outcome Packs use shared source facts for a coordinated set of drafts. |
+| You ask for one change and receive a completely different document. | Repair Mode defines what may change and what must stay; an optional text helper checks exact edit boundaries. |
+| Missing details turn into invented dates, prices, or promises. | Instructs the agent to distinguish supplied facts, assumptions, and unknowns rather than fill gaps with unsupported claims. |
+
+These are working methods, not a guarantee of perfect answers or measured time savings. Review important facts and commitments before using the result.
+
+## Who is it for?
+
+Anyone using a compatible AI agent for day-to-day work or learning: professionals handling messages and meetings, students studying from notes, creators preparing content, freelancers and small-business owners communicating with customers, and product or development teams turning ideas into tasks. You do not have to be a developer to use the writing, learning, or planning workflows.
+
+## Everyday use cases
+
+After installation, start with **“Use Brief to Result”**, then describe the task and attach or paste the relevant material. The examples below show requests you can adapt and the kind of result to ask for; they are not benchmark results.
+
+| Situation | Example request | Useful result |
+| --- | --- | --- |
+| You want to decline an invitation politely. | “Help me decline this invitation warmly. Keep it short and do not invent an excuse.” | A respectful reply that does not add a false reason or a new commitment. |
+| You need to follow up on unfinished work. | “Make this follow-up friendly but clear. Keep the deadline already in my draft.” | A ready-to-review message with the request and existing deadline intact. |
+| Your meeting notes are messy. | “Turn these notes into decisions, tasks, owners, and deadlines. Mark anything we did not agree on.” | An action summary that separates confirmed assignments from open questions. |
+| A topic in your study notes is confusing. | “Explain this topic for a beginner, give one concrete example, and write three practice questions.” | An explanation and a small exercise based on the supplied material. |
+| You have too much to do this week. | “Here are my tasks, deadlines, and six available hours. Recommend three priorities and what to defer.” | A proposed plan grounded in your stated capacity, without changing your calendar. |
+| A long document is hard to act on. | “Summarize this document: what changed, what I need to do, and what remains unclear.” | Key points and next steps, with missing information clearly identified. |
+| A customer is unhappy. | “Draft a calm reply using this complaint and our support policy. Do not promise refunds or delivery dates that are not confirmed.” | An empathetic draft with a supported next step. |
+| One product update needs several announcements. | “Use Launch Kit: turn these release notes into one customer email and two social posts. Use the same product facts.” | Coordinated drafts adapted to each channel. |
+| You have a feature idea but no clear handoff. | “Use Idea to Build: turn this idea into a brief, user flow, acceptance criteria, and implementation tasks. Do not code yet.” | A structured handoff with unresolved decisions called out. |
+| Most of a draft works, but the opening does not. | “Use Repair Mode: rewrite only the opening. Keep the rest of the text and the call to action unchanged.” | A targeted revision instead of an unnecessary full rewrite. |
+
+Simple tasks do not need a full Outcome Pack or a Project Profile. Start with the smallest result that solves your problem; add structure when the work needs it.
+
+### What does a finished result look like?
+
+The examples below are fictional illustrations of the intended output, not recorded model evaluations.
+
+<details>
+<summary><strong>Example 1: turn a rough message into a polite follow-up</strong></summary>
+
+**Your draft:**
+
+> hi Sam any news about the draft you said you'd send yesterday? i need it today
+
+**Your request:**
+
+> Use Brief to Result. Make this friendly and professional. Keep it short and preserve the existing deadline.
+
+**Illustrative result:**
+
+> Hi Sam, just following up on the draft you planned to send yesterday. I need it today—could you share an update? Thanks!
+
+The result keeps the actual request and timing without adding a meeting, an excuse, or a new promise.
+
+</details>
+
+<details>
+<summary><strong>Example 2: turn scattered meeting notes into an action summary</strong></summary>
+
+**Your notes:**
+
+> Alex drafts the proposal. Morgan reviews it. Budget still undecided. No due dates agreed.
+
+**Your request:**
+
+> Use Brief to Result. Extract tasks, owners, deadlines, and open decisions. Do not fill in missing information.
+
+**Illustrative result:**
+
+| Task | Owner | Deadline |
+| --- | --- | --- |
+| Draft the proposal | Alex | Not agreed |
+| Review the proposal | Morgan | Not agreed |
+
+**Open decision:** the budget has not been decided.
+
+The output makes the notes actionable without inventing a budget or due dates.
+
+</details>
 
 ## Start with a real task
 
