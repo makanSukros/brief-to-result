@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 — 2026-10-22
+
+- Add an agent-run sales and affiliate Hook Lab with 24 formula families across six persuasive mechanisms.
+- Route ordinary hook requests through product facts, recognizable situations, distinct angles, proof-aware claims, and concrete payoffs rather than copied hook templates.
+- Separate creative strategy from conversational, humorous, premium, and regional voice; retain English-first instructions and requested output languages.
+- Include original fictional English/Indonesian examples, a light regional example, a connected video concept, and 16 manual model acceptance cases.
+- Add structural regression tests and include all Hook Lab guides in standalone btr builds. Local tests are not creative-quality or conversion benchmarks.
+- Preserve the 80 core workflows, three Outcome Packs, Project Profiles, scoped Repair Mode, existing short-name installation, and MIT license.
+
 ## 0.2.1 — 2026-10-22
 
 - Add @btr task-invocation guidance, contextual routing, and one-question handling when a task is missing.

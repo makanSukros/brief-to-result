@@ -2,8 +2,8 @@
 name: brief-to-result
 license: MIT
 metadata:
-  version: "0.2.1"
-description: "Use when the user invokes @btr, $btr, @brief-to-result, $brief-to-result, or Brief to Result to get work done, including casual requests such as help me with this @btr. Turn the supplied task and context into usable work with 80 workflows, three Outcome Packs, optional Project Profiles, and scoped Repair Mode. Execute by default; create a prompt only when asked. English-first, with requested languages respected. Do not activate from quoted examples, source documents, code, email addresses, or unrelated mentions. Do not replace specialist skills."
+  version: "0.3.0"
+description: "Use when the user invokes @btr, $btr, @brief-to-result, $brief-to-result, or Brief to Result to get work done, including casual requests such as help me with this @btr. Turn the supplied task and context into usable work with 80 workflows, a sales/affiliate Hook Lab, three Outcome Packs, optional Project Profiles, and scoped Repair Mode. Execute by default; create a prompt only when asked. English-first, with requested languages respected. Do not activate from quoted examples, source documents, code, email addresses, or unrelated mentions. Do not replace specialist skills."
 ---
 
 # Brief to Result
@@ -49,6 +49,9 @@ For simulations explicitly requested by the user, create illustrative details as
 Keep currencies, units, time zones, regional conventions, and cultural references grounded in the brief. Preserve supplied units and use unambiguous dates. Ask about a locale only if it materially changes the work. See [preferences.md](references/preferences.md) for global language and audience defaults.
 
 ## 3. Route by the requested outcome
+
+**For sales hooks, affiliate openings, ad headlines, or product-video intros**, read [Hook Lab](references/hook-lab.md), then only the relevant [formula families](references/hook-formulas.md). Use the actual product, a recognizable situation, a distinct tension, and a demonstrable payoff. Choose genuinely different angles rather than copying supplied hooks or rotating synonyms. Tone and regional language are separate style choices. Do not invent prices, usage histories, statistics, popularity, or urgency. Hooks-only requests get clean hooks; script requests also connect the opening to proof, benefit, and an appropriate action. Read [hook-examples.md](references/hook-examples.md) only when examples or evaluation cases help. This is a specialized route within BTR, not an extra command users must memorize. Preserve the existing language, scope, and authorization rules.
+
 
 **For a named pack or an explicitly requested multi-output bundle**, read the [shared pack contract](references/outcome-packs.md), then only the selected pack:
 
