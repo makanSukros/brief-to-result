@@ -2,6 +2,8 @@
 
 **Turn short requests into clear, accurate, usable work.**
 
+**License:** [MIT](LICENSE)
+
 Brief to Result is an **English-first, globally adaptable agent skill** that routes short or underspecified requests through **80 practical workflows** across writing, understanding, ideation, sales, content, product/UX, engineering, and operations.
 
 > **Execute by default.** When someone asks you to "improve this", deliver the improved result—not a longer prompt. Create a prompt only when requested.
@@ -92,6 +94,7 @@ These helper scripts use the Python standard library.
 ```text
 brief-to-result/
 ├── SKILL.md
+├── LICENSE
 ├── agents/openai.yaml
 ├── references/
 │   ├── writing.md
@@ -115,4 +118,10 @@ English is the base language for documentation and newly created content, **not*
 
 ## License
 
-**No open-source license has been selected yet.** Publishing source code publicly does not itself grant permission to copy, modify, or redistribute it. The repository owner can add a LICENSE file after selecting the intended terms.
+Released under the [MIT License](LICENSE).
+
+Copyright (c) 2026 makanSukros.
+
+You may use, copy, modify, distribute, sublicense, and sell copies of this project, including for commercial purposes, subject to retaining the copyright and permission notices. The software is provided "AS IS", without warranty. See the license for the full terms.
+
+A copy is included in [`brief-to-result/LICENSE`](brief-to-result/LICENSE) so the license travels with standalone skill installations.
