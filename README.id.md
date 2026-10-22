@@ -4,9 +4,104 @@
 
 [English](README.md) | [Bahasa Indonesia](README.id.md) · [Lisensi MIT](LICENSE)
 
-Skill agent dengan bahasa dasar Inggris untuk pengguna global: **80 workflow, tiga Outcome Packs, Project Profiles opsional, dan Repair Mode dengan lingkup terarah**. Sampaikan hasil yang dibutuhkan, gunakan konteks proyek yang kamu pilih, lalu revisi hanya bagian yang perlu.
+**Brief to Result membantu agent AI mengubah permintaan sehari-hari menjadi hasil yang bisa dipakai:** pesan yang siap diperiksa dan dikirim, catatan rapat yang rapi menjadi daftar tindakan, penjelasan materi yang lebih mudah dipahami, atau ide mentah yang menjadi rencana kerja.
 
-> Secara default, skill langsung mengerjakan permintaan. Prompt baru dibuat ketika diminta. Menyiapkan konten tidak otomatis memberi izin untuk memublikasikannya.
+Ceritakan kebutuhanmu dengan bahasa biasa, lalu sertakan teks, catatan, atau file yang relevan. Skill ini memandu agent yang kompatibel untuk memilih cara kerja, mengikuti batasan, dan memeriksa hasilnya. Kamu tidak perlu menghafal ID workflow atau menyusun prompt panjang untuk setiap tugas.
+
+## Apa itu Brief to Result?
+
+Ini adalah **kumpulan instruksi, contoh, dan alat bantu lokal opsional yang bisa dipakai ulang oleh agent AI**. Anggap sebagai panduan kerja untuk agent, bukan aplikasi chatbot terpisah atau model AI baru.
+
+Di dalamnya ada **80 workflow, tiga Outcome Packs, Project Profiles opsional, dan Repair Mode dengan lingkup terarah**. Kamu bisa memakainya untuk pekerjaan kecil sehari-hari maupun proyek yang lebih besar, tanpa menjalankan seluruh katalog.
+
+Kamu tetap membutuhkan agent yang kompatibel beserta akses modelnya. Membaca file, mencari sumber, membuat file hasil, dan tindakan lainnya bergantung pada alat serta izin yang tersedia pada agent tersebut. Skill tidak menambahkan kemampuan itu dengan sendirinya. Setelah terpasang, permintaan menulis dan menyusun rencana biasa tidak membutuhkan coding; helper Python bersifat opsional.
+
+> Secara default, skill langsung mengerjakan permintaan. Saat diminta memperbaiki email, hasilnya seharusnya email yang sudah diperbaiki, bukan petunjuk cara memperbaikinya. Prompt baru dibuat ketika diminta. Menyiapkan konten tidak otomatis memberi izin untuk mengirim atau memublikasikannya.
+
+## Tujuan dan manfaatnya
+
+**Tujuannya adalah mengurangi usaha dari “saya butuh bantuan untuk ini” sampai mendapatkan hasil yang bisa digunakan.** Skill dirancang agar permintaanmu lebih mudah dikerjakan sambil menjaga fakta, maksud, dan batasan yang kamu berikan.
+
+| Kendala sehari-hari | Bantuan dari skill |
+| --- | --- |
+| Tahu kebutuhanmu, tetapi bingung menyusun prompt yang detail. | Memulai dari permintaan dan konteks yang tersedia; bertanya secara terarah hanya ketika informasi penting belum ada. |
+| Jawaban terlalu umum, terlalu panjang, atau formatnya tidak sesuai. | Menggunakan ketentuan audiens, gaya bahasa, panjang, bahasa, dan format untuk menyusun hasil. |
+| Harus menjelaskan proyek atau brand yang sama berulang kali. | Kamu bisa memilih Project Profile lokal yang memuat preferensi dan fakta bersumber untuk dipakai ulang. |
+| Membutuhkan beberapa hasil terkait, tetapi faktanya tidak konsisten. | Outcome Packs memakai fakta sumber yang sama untuk menyiapkan beberapa draf yang selaras. |
+| Minta satu bagian diperbaiki, tetapi seluruh tulisan malah berubah. | Repair Mode menetapkan bagian yang boleh berubah dan yang harus tetap; helper teks opsional memeriksa batas revisi secara persis. |
+| Informasi yang belum ada malah menjadi tanggal, harga, atau janji karangan. | Mengarahkan agent untuk membedakan fakta yang diberikan, asumsi, dan hal yang belum diketahui. |
+
+Ini adalah cara kerja yang dirancang untuk membantu, bukan jaminan jawaban selalu benar atau klaim penghematan waktu yang sudah diukur. Tetap periksa fakta dan komitmen penting sebelum menggunakan hasilnya.
+
+## Cocok untuk siapa?
+
+Siapa pun yang memakai agent AI yang kompatibel untuk pekerjaan atau belajar sehari-hari: pekerja yang mengurus pesan dan rapat, pelajar yang belajar dari catatan, kreator yang menyiapkan konten, freelancer dan pemilik usaha yang berkomunikasi dengan pelanggan, serta tim produk atau developer yang merapikan ide menjadi tugas. Kamu tidak harus menjadi developer untuk memakai workflow menulis, belajar, atau menyusun rencana.
+
+## Contoh penggunaan sehari-hari
+
+Setelah terpasang, mulai dengan **“Gunakan Brief to Result”**, lalu jelaskan tugas dan tempelkan atau lampirkan bahan yang relevan. Contoh berikut bisa kamu sesuaikan dengan kebutuhan; bentuk hasilnya merupakan tujuan penggunaan, bukan hasil benchmark.
+
+| Situasi | Contoh permintaan | Hasil yang berguna |
+| --- | --- | --- |
+| Ingin menolak undangan dengan sopan. | “Bantu saya menolak undangan ini dengan ramah. Buat singkat dan jangan mengarang alasan.” | Balasan sopan tanpa alasan palsu atau komitmen baru. |
+| Perlu menanyakan perkembangan pekerjaan. | “Buat pesan follow-up ini ramah tetapi jelas. Pertahankan tenggat yang sudah ada di draf saya.” | Pesan siap ditinjau dengan permintaan dan tenggat asli tetap utuh. |
+| Catatan rapat masih berantakan. | “Jadikan catatan ini keputusan, tugas, penanggung jawab, dan tenggat. Tandai yang belum disepakati.” | Ringkasan tindakan yang membedakan penugasan pasti dan pertanyaan terbuka. |
+| Ada materi belajar yang sulit dipahami. | “Jelaskan materi ini untuk pemula, beri satu contoh konkret, lalu buat tiga soal latihan.” | Penjelasan dan latihan singkat berdasarkan bahan yang diberikan. |
+| Pekerjaan minggu ini terlalu banyak. | “Ini daftar tugas, tenggat, dan waktu luang saya yang hanya enam jam. Pilih tiga prioritas dan apa yang ditunda.” | Usulan rencana sesuai kapasitasmu, tanpa mengubah kalender. |
+| Dokumen panjang sulit ditindaklanjuti. | “Rangkum dokumen ini: apa yang berubah, apa yang harus saya lakukan, dan apa yang belum jelas.” | Poin penting dan langkah berikutnya, dengan informasi yang belum tersedia ditandai. |
+| Ada pelanggan yang menyampaikan keluhan. | “Buat balasan yang tenang berdasarkan keluhan dan kebijakan layanan ini. Jangan menjanjikan refund atau tanggal kirim yang belum pasti.” | Draf yang empatik dengan langkah berikutnya yang didukung informasi. |
+| Satu update produk perlu diumumkan di beberapa tempat. | “Gunakan Launch Kit: ubah catatan rilis ini menjadi satu email pelanggan dan dua postingan sosial. Gunakan fakta produk yang sama.” | Draf yang konsisten dan disesuaikan untuk tiap kanal. |
+| Ide fitur belum cukup jelas untuk diteruskan ke tim. | “Gunakan Idea to Build: jadikan ide ini brief, alur pengguna, kriteria penerimaan, dan tugas implementasi. Jangan coding dulu.” | Bahan kerja yang terstruktur, termasuk keputusan yang belum selesai. |
+| Draf sudah bagus, tetapi pembukanya kurang pas. | “Gunakan Repair Mode: ubah pembukanya saja. Pertahankan teks lainnya dan ajakan bertindak tanpa perubahan.” | Revisi terarah, bukan penulisan ulang seluruh draf yang tidak diperlukan. |
+
+Tugas sederhana tidak membutuhkan Outcome Pack lengkap atau Project Profile. Mulai dari hasil terkecil yang menyelesaikan kebutuhanmu; gunakan struktur tambahan ketika memang diperlukan.
+
+### Seperti apa contoh hasilnya?
+
+Contoh di bawah bersifat fiktif untuk menunjukkan bentuk hasil yang dituju, bukan rekaman evaluasi model.
+
+<details>
+<summary><strong>Contoh 1: pesan mentah menjadi follow-up yang sopan</strong></summary>
+
+**Draf kamu:**
+
+> hai Sam gimana draf yang katanya mau dikirim kemarin? saya perlu hari ini
+
+**Permintaan kamu:**
+
+> Gunakan Brief to Result. Buat pesan ini ramah dan profesional. Tetap singkat dan pertahankan tenggat yang sudah ada.
+
+**Ilustrasi hasil:**
+
+> Hai Sam, saya ingin menanyakan draf yang rencananya dikirim kemarin. Saya membutuhkannya hari ini. Boleh dibantu kabar perkembangannya? Terima kasih!
+
+Hasilnya mempertahankan permintaan dan waktu yang memang ada, tanpa menambahkan rapat, alasan, atau janji baru.
+
+</details>
+
+<details>
+<summary><strong>Contoh 2: catatan rapat acak menjadi ringkasan tindakan</strong></summary>
+
+**Catatan kamu:**
+
+> Alex membuat draf proposal. Morgan memeriksa. Anggaran belum diputuskan. Belum ada tenggat yang disepakati.
+
+**Permintaan kamu:**
+
+> Gunakan Brief to Result. Ambil tugas, penanggung jawab, tenggat, dan keputusan terbuka. Jangan mengisi informasi yang belum ada.
+
+**Ilustrasi hasil:**
+
+| Tugas | Penanggung jawab | Tenggat |
+| --- | --- | --- |
+| Membuat draf proposal | Alex | Belum disepakati |
+| Memeriksa proposal | Morgan | Belum disepakati |
+
+**Keputusan terbuka:** anggaran belum diputuskan.
+
+Catatan menjadi lebih mudah ditindaklanjuti tanpa mengarang anggaran atau tenggat.
+
+</details>
 
 ## Mulai dari pekerjaan nyata
 
