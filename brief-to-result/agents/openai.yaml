@@ -1,0 +1,7 @@
+interface:
+  display_name: "Brief to Result"
+  short_description: "80 workflows that turn requests into usable results"
+  default_prompt: "Use $brief-to-result to turn my request into a clear, accurate, ready-to-use result for my intended audience."
+
+policy:
+  allow_implicit_invocation: false
